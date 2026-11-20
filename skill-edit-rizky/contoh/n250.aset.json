@@ -1,0 +1,22 @@
+{
+  "proyek": "kolase-n250",
+  "rasio": "9:16",
+  "era": "1990s Indonesian",
+  "gaya": "arsip",
+  "aset": [
+    {"kode": "bandara-kini", "jenis": "pelat", "gaya": "modern", "isi": "view through a large airport terminal window at a modern Indonesian airport, several large white jet airliners parked at the gates on a sunny afternoon, travelers' silhouettes in the foreground"},
+    {"kode": "n250-lepas", "jenis": "pelat", "isi": "a white twin-engine turboprop regional airliner with a thin blue and red stripe along the fuselage and six-bladed propellers, taking off over green hills near Bandung on a bright morning in 1995, seen from below at a slight angle"},
+    {"kode": "hangar-luar", "jenis": "pelat", "isi": "exterior of a huge aircraft factory hangar in Bandung in the 1990s, tall corrugated metal doors half open, tropical hills and palm trees behind, a few workers in white shirts walking on the apron"},
+    {"kode": "hangar-dalam", "jenis": "pelat", "isi": "inside a bright aircraft assembly hangar, a brand new white twin-engine turboprop airliner prototype with a thin blue and red stripe, small groups of Indonesian engineers in white short-sleeved shirts seen from behind and far away, scaffolding and work lights"},
+    {"kode": "pesawat", "jenis": "potongan", "isi": "side view of a white twin-engine turboprop regional airliner in flight with landing gear up, thin blue and red stripe along the fuselage, six-bladed propellers, high-mounted wings"},
+    {"kode": "penonton", "jenis": "pelat", "isi": "a large crowd of Indonesian people in 1995 clothing seen from behind at the edge of an airfield, many raising their hands and small red and white flags, all looking up at the bright sky where a small airliner is climbing far away"},
+    {"kode": "kabin", "jenis": "pelat", "isi": "interior cabin of a new 1990s regional turboprop airliner, rows of empty blue fabric passenger seats on both sides of a narrow aisle, small oval windows with daylight"},
+    {"kode": "hangar-gelap", "jenis": "pelat", "gaya": "gelap", "isi": "a dim, quiet, almost empty aircraft hangar at dusk, a white turboprop airliner prototype parked in the corner partly covered by a grey tarpaulin, dust in a single beam of light from a high window, no people"},
+    {"kode": "museum", "jenis": "pelat", "gaya": "modern", "isi": "an outdoor aircraft museum display on a sunny day in Yogyakarta, an old white twin-engine turboprop airliner with a faded blue and red stripe parked on a grass field among other old aircraft, a few visitors far away"},
+    {"kode": "antre-bank", "jenis": "pelat", "isi": "Jakarta street in 1998 during the Asian financial crisis, worried Indonesian people queuing in a long line in front of a bank building, hot afternoon light"},
+    {"kode": "tangan-pena", "jenis": "potongan", "isi": "a man's hand in a white shirt cuff holding a black fountain pen, about to sign, seen from above, hand and pen only"},
+    {"kode": "insinyur", "jenis": "potongan", "isi": "waist-up portrait of a young Indonesian aircraft engineer in the 1990s, white short-sleeved shirt, glasses, holding a rolled blueprint under his arm, looking proudly up and to the side"},
+    {"kode": "awan", "jenis": "potongan", "gaya": "modern", "isi": "one big fluffy white cumulus cloud"},
+    {"kode": "uang", "jenis": "potongan", "isi": "a stack of old Indonesian rupiah paper banknotes from the 1990s, slightly messy, seen at an angle"}
+  ]
+}

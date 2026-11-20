@@ -1,0 +1,24 @@
+# N250 Gatotkaca · skill-edit-rizky · 9:16 · ±45 dtk
+# pola: balik (dunia dikenal → pembalik → 3 fakta → masalah → konsekuensi → hari ini + vonis)
+# sumber: https://en.wikipedia.org/wiki/IPTN_N250 — terbang perdana 10 Agu 1995; 50 penumpang; 2 prototipe; PA-2 terbang 19 Des 1996; uji terbang ±separuh dari ±1.400 jam saat dihentikan; IMF minta dukungan dihentikan (paket US$43 miliar); PA-1 dipajang di Museum Dirgantara Mandala (21 Agu 2020)
+# sumber: https://rri.co.id/sudut-pandang/1954506/berkaca-pada-gatotkaca — terbang perdana 55 menit pada 10 Agustus 1995; tipe Gatotkaca kapasitas 50 penumpang; fly by wire
+# sumber: https://www.goodnewsfromindonesia.id/2026/05/25/n-250-dikubur-rupiah-diselamatkan-pengorbanan-terbesar-bj-habibie — LoI dengan IMF 15 Jan 1998; IMF meminta pendanaan industri strategis termasuk IPTN dihentikan; fly-by-wire pertama di kelasnya
+# sumber: https://www.globalsecurity.org/military/world/indonesia/n250.htm — Januari 1998 IMF meminta pemerintah berhenti membiayai IPTN, paket US$43 miliar
+# dramatisasi: koran "Harian Nusantara" fiktif (kejadian dan tanggalnya nyata); kalimat pembuka "hampir pasti buatan luar negeri" = pengamatan umum armada maskapai Indonesia (Boeing/Airbus/ATR), bukan angka
+# detail pancingan komentar: nama prototipe kedua (Krincing Wesi) sengaja tidak disebut
+# babak 1
+L01 | Pesawat yang kamu naiki mudik, hampir pasti buatan luar negeri.
+L02 | Padahal tahun 1995, Indonesia sudah terbang dengan pesawat buatannya sendiri.
+# babak 2
+L03 | Namanya N250 Gatotkaca, dirakit IPTN di Bandung.
+L04 | Sepuluh Agustus 1995, ia terbang perdana selama 55 menit.
+L05 | Muat 50 penumpang, dengan kendali fly by wire, yang pertama di kelasnya.
+L06 | Desember 1996, prototipe keduanya ikut mengudara.
+# babak 3
+L07 | Tapi lalu, krisis datang.
+L08 | Januari 1998, Indonesia meneken perjanjian dengan IMF demi paket bantuan 43 miliar dolar.
+L09 | Salah satu syaratnya: dana untuk IPTN dihentikan.
+L10 | Uji terbangnya baru jalan separuh dari 1.400 jam.
+# babak 4
+L11 | Hari ini, Gatotkaca diam di Museum Dirgantara Mandala, Yogyakarta.
+L12 | Pesawatnya sudah jadi. Yang tidak siap, zamannya.

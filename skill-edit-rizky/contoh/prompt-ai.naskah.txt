@@ -1,0 +1,27 @@
+# Kamu Salah Pakai AI Kalau Masih Nanya Cuma Satu Kalimat · ±60 dtk · pola balik · latar navy grid + kertas retro (permintaan pengguna) · storyboard + VO dari pengguna (suara Ganesh)
+# pola: balik
+# Naskah = teks VO pengguna apa adanya (rekaman Ganesh sudah dibuat pengguna).
+# sumber: https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf — Google: empat area prompt efektif = Persona, Task, Context, Format; prompt paling berhasil rata-rata ±21 kata (beta Workspace Labs)
+# sumber: https://blog.google/products/workspace/google-gemini-workspace-ai-prompt-tips/ — Google: persona = sudut pandang, task = tindakan spesifik, context = latar belakang, format = bentuk hasil
+# sumber: https://workspace.google.com/learning/content/gps-prompt — Google Workspace: panduan menulis prompt
+# dramatisasi: contoh produk (kopi susu gula aren Rp18.000), jawaban AI "kaku", dan tabel hasil adalah ilustrasi yang ditulis kode, bukan keluaran model tertentu
+# babak 1 — hook + masalah
+L01 | Kamu salah pakai AI kalau masih nanya cuma satu kalimat.
+L02 | Misalnya kamu ngetik: "Buatkan caption jualan kopi."
+L03 | Hasilnya? Pasti kaku, klise, dan terasa kayak robot.
+L04 | Bukan AI-nya yang kurang pintar, tapi arahannya yang kurang lengkap.
+# babak 2 — rumus
+L05 | Biar hasilnya langsung siap pakai, biasakan pakai rumus 4 elemen ini setiap kali ngetik prompt:
+L06 | Peran, Konteks, Tugas, dan Format.
+L07 | Pertama, Peran. Kasih tahu AI dia harus bertindak sebagai siapa.
+L08 | Contoh: "Bertindaklah sebagai copywriter spesialis F&B."
+L09 | Kedua, Konteks. Jelaskan situasinya.
+L10 | "Saya jual kopi susu gula aren Rp18.000 untuk pekerja kantoran yang ngantuk jam 2 siang."
+L11 | Ketiga, Tugas. Perintah spesifik yang harus dia kerjakan.
+L12 | "Buat 3 ide caption yang relatable dan bikin penasaran."
+L13 | Keempat, Format. Bentuk output yang kamu mau.
+L14 | "Tulis dalam bentuk tabel berisi hook, isi caption, dan CTA."
+# babak 3 — hasil + ajakan
+L15 | Lihat bedanya. Jawabannya langsung tajam, sesuai target pasar, dan nggak perlu banyak diedit lagi.
+L16 | Save video ini biar nggak lupa rumusnya pas lagi butuh.
+L17 | Coba praktekkin sekarang!

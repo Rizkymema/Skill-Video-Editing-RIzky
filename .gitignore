@@ -1,0 +1,27 @@
+# video, audio, dan hasil render tidak pernah di-commit
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.ogg
+_kerja/
+ekspor/
+film.html
+pratinjau*.mp4
+
+# rahasia
+api_key.txt
+token*.json
+client_secret*.json
+.env
+
+# sistem
+__pycache__/
+*.pyc
+Thumbs.db
+desktop.ini
+.DS_Store

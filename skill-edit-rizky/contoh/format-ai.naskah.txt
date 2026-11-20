@@ -1,0 +1,25 @@
+# Jawaban AI Kepanjangan? Pakai Trik Ini · ±60 dtk · pola angka (3 trik) · lanjutan video "Kamu Salah Pakai AI" (tokoh 3D Raka, navy grid + kartu kertas retro) · storyboard + VO dari pengguna
+# pola: angka
+# Naskah = teks VO pengguna apa adanya.
+# sumber: https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf — Google: "Format" = salah satu dari empat unsur prompt; minta bentuk hasil (poin, tabel, batas panjang)
+# sumber: https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api — OpenAI: jelaskan format keluaran yang diinginkan dan panjangnya secara spesifik
+# sumber: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/be-clear-and-direct — Anthropic: beri instruksi jelas dan langsung, termasuk bentuk keluaran
+# dramatisasi: jawaban "kayak skripsi", 5 poin, tabel, dan ringkasan 3 kalimat adalah ilustrasi yang ditulis kode, bukan keluaran model tertentu
+# babak 1 — hook + masalah
+L01 | Jawaban AI kepanjangan? Pakai trik ini.
+L02 | Pernah nanya singkat, tapi AI malah balas berparagraf-paragraf kayak skripsi?
+L03 | Ujung-ujungnya kamu malas baca dan harus ngerangkum ulang sendiri.
+L04 | Biar nggak buang waktu, selalu kunci panjang dan bentuk jawabannya di akhir prompt pakai tiga batasan ini.
+# babak 2 — tiga trik
+L05 | Pertama, minta dalam bentuk poin-poin.
+L06 | Tambahkan kalimat: "Tulis dalam lima poin singkat tanpa pembukaan."
+L07 | AI bakal langsung buang basa-basinya.
+L08 | Kedua, minta bentuk tabel.
+L09 | Kalau lagi bandingin produk atau ide, ketik: "Sajikan dalam bentuk tabel berisi kelebihan, kekurangan, dan harga."
+L10 | Sekali lirik langsung paham.
+L11 | Ketiga, batasi jumlah kalimatnya.
+L12 | Ketik: "Jelaskan konsep ini maksimal dalam tiga kalimat sederhana."
+L13 | Cocok banget buat paham topik rumit dalam hitungan detik.
+# babak 3 — hasil + ajakan
+L14 | Hasilnya jauh lebih rapi dan hemat waktu baca.
+L15 | Save video ini biar nggak lupa triknya pas lagi butuh!

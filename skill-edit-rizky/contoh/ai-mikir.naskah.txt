@@ -1,0 +1,30 @@
+# AI Sebenarnya Nggak "Mikir" Kayak Manusia · ±50 dtk · pola mitos · tema teknologi · dari storyboard pengguna (3 logo kiriman pengguna)
+# pola: mitos
+# tema: teknologi
+# Storyboard pengguna dipakai hampir utuh (133 kata). Perubahan kecil: kalimat dipecah per ketukan visual; tanda baca disesuaikan.
+# Tidak ada angka di narasi (tidak ada klaim jumlah data latih yang berbeda-beda antar model). Contoh jawaban salah = ilustrasi fiktif (buku karangan, bukan kutipan model tertentu).
+# Penyederhanaan yang disengaja (disebut di deskripsi): asisten AI modern juga dilatih tambahan (umpan balik manusia, alat bantu pencarian), tapi inti kerjanya tetap memprediksi kata berikutnya.
+# sumber: https://www.ibm.com/think/topics/large-language-models — LLM = mesin prediksi statistik yang berulang memprediksi kata berikutnya; dilatih dari data raksasa (situs web, artikel, buku)
+# sumber: https://openai.com/index/why-language-models-hallucinate/ — halusinasi = pernyataan masuk akal tetapi salah yang dihasilkan model bahasa
+# sumber: https://arxiv.org/abs/2509.04664 — Why Language Models Hallucinate (Kalai dkk., 2025): pelatihan/penilaian mendorong model menebak daripada mengaku tidak tahu
+# sumber: https://arxiv.org/abs/2311.05232 — survei halusinasi pada model bahasa besar
+# sumber: https://research.google/blog/the-machine-intelligence-behind-gboard/ — keyboard HP (Gboard) memakai model bahasa untuk menebak kata
+# dramatisasi: tampilan keyboard, obrolan, dan persentase peluang kata di layar adalah ilustrasi yang disederhanakan; contoh buku "Kucing yang Menjaga Matahari" karangan (tidak ada)
+# babak 1 — hook
+L01 | Kamu pikir ChatGPT, Gemini, dan Claude itu mikir kayak manusia? Sebenarnya... nggak.
+# babak 2 — perumpamaan keyboard
+L02 | Cara kerjanya mirip fitur tebak kata di keyboard HP kamu.
+L03 | Ketik "selamat pagi, apa..." dan keyboard langsung nebak: "kabar".
+# babak 3 — cara kerja
+L04 | AI seperti ChatGPT, Gemini, dan Claude melakukan hal yang sama, tapi jauh lebih canggih.
+L05 | Mereka dilatih dari teks dalam jumlah raksasa: buku, artikel, website.
+L06 | Dari situ, mereka belajar pola: kata apa yang biasanya muncul setelah kata apa.
+L07 | Jadi waktu kamu bertanya, AI menyusun jawaban sepotong demi sepotong.
+L08 | Setiap kali, dia memilih kata berikutnya yang paling cocok.
+# babak 4 — twist
+L09 | Makanya AI bisa terdengar pintar banget... tapi kadang salah dengan sangat yakin.
+L10 | Istilahnya: halusinasi.
+# babak 5 — penutup
+L11 | Jadi AI itu bukan otak, tapi mesin penebak kata yang luar biasa jago.
+L12 | Tetap cek ulang jawabannya, ya.
+L13 | Follow buat tahu cara kerja teknologi lain yang kamu pakai tiap hari.
