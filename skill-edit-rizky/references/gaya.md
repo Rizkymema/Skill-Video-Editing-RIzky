@@ -7,21 +7,11 @@ Laporan lengkap + 26 lembar bingkai: `D:\automation\Video AI\Video Refrensi\earn
 
 Permintaan pengguna 18 Nov 2026: skill ini dipakai untuk **topik apa saja** dan hasilnya **tidak boleh selalu sama**. Yang tetap hanya tekniknya (lapisan, kamera, perpindahan bermotivasi, data bersumber). Tampilan, alur cerita, benda, dan transisi khas dipilih dari topik, lalu dicek dengan riwayat video sebelumnya.
 
-### 0.1 Tema (`KONFIG.tema`)
-| Tema | Topik | Latar/pola yang cocok | Benda khas | Transisi tanda tangan | Musik bawaan |
-|---|---|---|---|---|---|
-| `arsip` | sejarah 1900–1990, Indonesia yang terlupakan | kertas krem, koran, meja kayu | koran + stabilo kuning, kartu foto, dokumen | `tutup` koran, `bingkai` ke foto, `kartu` | dokumenter |
-| `dosir` | misteri, kriminal, konspirasi, kasus tak terpecahkan | dinding gelap bertekstur, meja interogasi, papan petunjuk | dokumen + cap merah, kartu foto ditempel, `bingkai` bentuk `kunci`/`peti` | `fokus`, `bingkai`, `tarik` pelan | misteri |
-| `pasar` | uang, bisnis, harga, saham, merek | grid, meja kantor, `sinar` hijau | grafik, label harga berayun, papan kapur angka, stabilo hijau | `jatuh` (uang/angka), `kartu` struk, `sentak` | dokumenter cepat |
-| `teknologi` | gadget, internet, AI, penemuan modern | grid biru (blueprint), ruang gelap bercahaya layar | TV/layar, grafik progres, cetak biru | `dorong` ke layar, `bingkai` ke layar TV, `strip` | pulsa |
-| `tv` | budaya pop, iklan, hiburan, tren 70–2000an | ruang keluarga, studio, `spiral`/`sinar` | TV kayu, stiker, label | `bingkai` ke TV, `kilat`, `putar` | ceria |
-| `modern` | kejadian 2005–sekarang, viral, tokoh publik (tanpa wajah AI) | warna pekat, kota, kantor kaca | HP/layar, grafik, kartu foto | `dorong`, `sentak`, `fokus` | dokumenter |
-| `perang` | perang, bencana, tragedi | abu-abu berdebu, peta, puing | peta, dokumen rahasia, cap, angka korban (hati-hati, bersumber) | `kilat`, `sentak`, `tarik` | tegang |
-| `alam` | alam, hewan, geografi, sains, luar angkasa | lanskap, langit, kertas grid hijau | kartu foto spesimen, grafik, papan | `tarik` (dekat → bentang alam), `bingkai` bulat (lensa), `fokus` | pad |
-| `editorial` | penjelasan cerdas, opini, teknologi elegan, self-improvement | latar `editorial` otomatis (abu-putih, lengkungan, garis putus-putus) | kartu putih bersudut bulat, kotak sorot hitam, `kustom` UI | `geser`, `fokus`, `cocok` | pad |
-| `kartu` | tips, tutorial, produktivitas, seri edukasi bertokoh | navy #051D40 bergrid otomatis | kartu kertas retro berselotip, mockup chat/tabel, tokoh 3D (`aset/raka-3d/`) | `pop`, `kartu`, `sentak` | ceria |
-
-Ringkasan lengkap tiap tema (tampilan, huruf, contoh, aturan seri) ada di `tema.md`. Tema dipilih pengguna di dialog setup (pertanyaan **Tema**) atau otomatis dari kolom Topik.
+### 0.1 Tema (`KONFIG.tema`) dan resep gaya
+Tabel tema mesin (topik, latar, benda khas, **transisi tanda tangan**, musik bawaan, huruf, contoh) sekarang satu tempat saja: `tema.md` (dulu tabel ini digandakan di sini). Di atas tema ada dua lapis pilihan dari skill saudara `sutradara-edit`:
+- **Resep gaya** (`sutradara-edit/pustaka/style/resep/`): gaya utuh hasil bedah reel acuan, masing-masing dengan preset mesin (tema + grade + palet + gayaTeks + latar + musik), tata bahasa adegan, dan cara memakai untuk topik lain.
+- **20 gaya visual** (`sutradara-edit/pustaka/style/gaya-visual.md`) + aturan campur dua gaya (`campur-gaya.md`).
+Urutan menang: acuan visual pengguna > resep/gaya pilihan pengguna > tema otomatis dari topik. Gaya dipilih di dialog setup (pertanyaan **Gaya**) atau otomatis dari topik.
 
 Topik di luar tabel: pilih tema terdekat, lalu sesuaikan `palet` (dua warna aksen yang punya arti di topik itu: hijau uang, biru teknologi, merah bahaya) dan pola latar. Satu video = satu tema; warna aksen hanya dua.
 
@@ -36,6 +26,7 @@ Topik di luar tabel: pilih tema terdekat, lalu sesuaikan `palet` (dua warna akse
 | `mitos` | sains, kesehatan, kepercayaan umum | yang dipercaya banyak orang → bukti 1–2 → fakta sebenarnya (bersumber) → cara mengingatnya |
 
 ### 0.3 Kartu identitas visual (wajib di Tahap 2, sebelum aset Flow)
+Sejak 27 Nov 2026 kartu ini menjadi bagian dari **Brief Sutradara** (`sutradara-edit/templat/brief.md`), yang menambah premis, emosi, sistem huruf, bahasa gerak, metafora utama, palet bunyi, musik, dan "yang sengaja tidak dipakai". Enam baris di bawah tetap wajib ada di dalamnya.
 Tulis 6 baris di chat dan di kepala `konfig.js`: **tema** · **pola cerita** · **2 warna aksen** · **benda khas topik** (1–2 benda bertulisan yang jadi "wajah" video, mis. struk belanja untuk harga, peta untuk perang) · **transisi tanda tangan** (satu perpindahan khas yang muncul di momen terpenting, mis. `bingkai` ke layar TV untuk topik siaran) · **beda dari video terakhir** (apa yang diganti, dari `riwayat.py lihat`). Gaya prompt Flow ikut tema (`flow.md`: `arsip`/`modern`/`gelap` + suasana tema).
 
 ### 0.4 Aturan beda dari video sebelumnya
@@ -167,3 +158,4 @@ Rincian di `klip.md`. Ringkasnya:
 11. Potongan makhluk hidup/benda lentur bergerak dengan `rig`; tidak ada subtitle di bawah kecuali diminta.
 12. Foto/video nyata punya label kredit di layar selama tampil dan tercatat di `media.json`.
 13. Klip Flow (bila ada) mulus dari fotonya, tanpa wajah/tangan berubah bentuk; efek tidak menutupi teks/data.
+14. Lolos QC-1 `sutradara-edit/pustaka/polish/qc.md`: hook terbaca tanpa suara, progresi + payoff jelas, tiap transisi punya motivasi, anggaran efek dan transisi heboh lolos, tidak ada tanda "AI/templat" (§6).

@@ -25,6 +25,10 @@ File: `assets/templat.html`. Per video hanya blok `<script id="konfig">` (KONFIG
 | `thumbnail` | | `{ t }` bingkai untuk `thumbnail` |
 | `teks` | | tanpa narasi: `[{ mulai, akhir, teks }]` jadi subtitle |
 | `ekor`, `lufs`, `rapatkan`, `lajuNarasi`, `bitrate` | 0,35 · −14 · 0,4 · 1 · otomatis | sama dengan cerita-html |
+| `volume`, `volumeSfx`, `volumeSuara` | 0,9 · 1 · 1,1 | pengali bus master / semua SFX / narasi (sebelum kompresor dan normalisasi LUFS). Musik berkas (`rakit --musik`, `--vol-musik`) otomatis diredam ke 30% selama tiap baris narasi lalu naik lagi; musik sintesis ke 32% |
+
+**Opsi SFX berkas** (`{ t, berkas, vol, … }` di `sfx` adegan/global): `lama` (detik atau rujukan narasi sebagai waktu selesai), `ulang: true` (diulang, bawaan 4 dtk; untuk ambience/room tone), `masuk` (lama fade-in, bawaan 0,02, maks 0,3), `dari` (mulai dari detik ke-n di dalam berkas). Fade-out 0,3 dtk otomatis di akhir `lama`.
+**Kamera dan easing berupa fungsi**: `kamera: t => ({ x, y, zoom, putar })` (t = detik sejak adegan mulai; untuk handheld berlapis atau gerak berirama musik) dan easing keyframe `[[t, nilai, x => …]]` (mis. tangga `x => Math.floor(x * 8) / 8` untuk gerak patah-patah). Keduanya didukung mesin sejak 1.1 tetapi baru dicatat 27 Nov 2026.
 
 ## ADEGAN (urut)
 `{ id, mulai|durasi|akhir, masuk, arahMasuk, titikMasuk, lamaMasuk, kuatMasuk, bingkai, latar, kamera, lapis: [...], efek: [...], sfx: [...], gambar(c,t,d,T) }`
@@ -121,6 +125,7 @@ Aturan: beri kanvas **padding** (±60 px) bila kartu punya bayangan sendiri (`sh
 
 ### `angka: { dari, ke, lama, t, awal, akhir }`
 Angka bergulir ala odometer dengan pemisah ribuan; `awal`/`akhir` = teks depan/belakang (`' MENIT'`), `aksenBaru: false` mematikan warna aksen digit yang berubah. Gaya teks sama (`gaya`, `ukuran`, `aksen`).
+**Hanya bilangan bulat** (nilai dibulatkan ke bawah). Untuk desimal, gulirkan bagian bulatnya dan taruh sisanya di `akhir`: "3,6 KG" = `{ dari: 0, ke: 3, akhir: ',6 KG' }`; "0,01 MP" lebih baik sebagai teks biasa (`gaya: 'padat'`, `anim: 'jatuh'`).
 
 ### `benda: { jenis, … }` (teks ditulis kode; `*^~` dibuang)
 | Jenis | Isi |
@@ -159,6 +164,7 @@ Diperiksa tiap 0,1 dtk. **Salah**: durasi di luar `durasiTarget` · narasi mulai
 Foto/video nyata untuk topik berdata: `scripts/ambil_media.py cari|ambil|daftar` (`data-media.md`). `suara` (Edge `--edge` / ElevenLabs; angka & singkatan dieja Indonesia, `--tanpa-eja`), `kata` (rekaman sendiri → waktu kata), `rakit` (+ `--gambar DIR`, `--maks 2400`, `--klip nama=video.mp4@12`, `--musik`, `--sfx`, `--laju-narasi`), `cek`, `kontak` (`--n` / `--t`), `bingkai`, `thumbnail`, `ekspor`. Riwayat pilihan visual antar-video: `scripts/riwayat.py lihat` / `catat <_kerja>` (`gaya.md` §0.4). Ekspor 46 dtk 1080×1920 di PC ini: lihat catatan uji di `SKILL.md`.
 
 ## Riwayat
+- 27 Nov 2026 — dokumentasi saja (mesin tidak diubah): `volume`/`volumeSfx`/`volumeSuara`, opsi SFX berkas (`ulang`/`masuk`/`dari`/`lama`), kamera + easing berupa fungsi, peredaman musik saat narasi. Keputusan kreatif dipindah ke skill saudara `sutradara-edit` (pustaka 11 kategori + 7 resep gaya + `ketukan.py`); daftar celah mesin yang ditemukan pustaka ada di `AUDIT.md` akar repo.
 - 20 Nov 2026 malam — acuan visual (permintaan pengguna: "setiap kali saya kirim referensi untuk visualnya dapat mengikuti juga, topik apa pun"): pola `editorial`, gaya teks `serif`/`tebal`/`sorot`, `KONFIG.gayaTeks` global, `scripts/bedah_acuan.py`, `references/acuan.md`; `contoh/ai-mikir` diubah memakai fitur itu (tanpa latar kustom).
 - 20 Nov 2026 — Kolase 1.4 (video "AI Sebenarnya Nggak Mikir Kayak Manusia", storyboard dan 3 logo dari pengguna): benda `kustom` + `hp.lukis` (gambar-sendiri di kanvas benda, `K` alat bantu), `KT()` di mesin; tema `teknologi` tanpa foto Flow, semua visual digambar kode; logo kiriman pengguna (resolusi kecil, latar putih) diubah jadi ubin app-icon tajam lewat skrip sekali pakai (alfa dari ambang + penyebaran warna terdekat; dua-warna dipoles ulang dengan smoothstep). `contoh/ai-mikir.*` ditambahkan.
 - 18 Nov 2026 malam — Kolase 1.3 (permintaan pengguna: kombinasi klip video Flow "hanya di bagian yang bagus" atau foto saja, efek "seperti animasi-html", "seolah saya mengedit dari After Effects", render tetap cepat): foto hidup (`gambar` + `klip.kode`), kontrol putar klip (`mulai`/`laju`/`pantul`/`tahan`), klip berlatar hijau → potongan bergerak (`rakit --klip …:hijau`), `flow_kolase.py klip`/`ambil-klip`, efek `cahaya`/`bakar`/`glitch`/`garis`/`partikel`/`bokeh`/`berkas`/`kabut`/`sorot`, lapisan `kilap`, `coret`, rig `miring` (3D), benda `hp`/`notif`/`balon`, perpindahan `glitch`, `panel` layar terbelah. Diuji dengan klip buatan ffmpeg (tanpa kredit) + contoh N250 (cek BERES).

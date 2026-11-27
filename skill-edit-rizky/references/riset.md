@@ -22,7 +22,7 @@ Video gaya ini hidup dari angka, tanggal, dan nama. Satu angka salah = komentar 
 - Kalimat pembuka umum ("hampir pasti buatan luar negeri") boleh tanpa angka, asal tidak menyesatkan.
 
 ## 3. Tokoh nyata dan merek
-- Wajah tokoh terkenal tidak dibuat Flow. Pilihan: foto berlisensi (Wikimedia Commons, domain publik, NASA; `visual-animasi-2d/scripts/ambil_footage.py`, catat lisensinya), orang dari belakang/siluet, atau benda yang mewakili (pesawat, dokumen).
+- Wajah tokoh terkenal tidak dibuat Flow. Pilihan: foto berlisensi (Wikimedia Commons, domain publik, NASA; `scripts/ambil_media.py` skill ini, lisensi tercatat di `media.json`, lihat `data-media.md`), orang dari belakang/siluet, atau benda yang mewakili (pesawat, dokumen).
 - Logo merek/media nyata tidak digambar; nama merek boleh disebut di narasi.
 - Topik tragedi: korban tidak jadi bahan lelucon; vonis menghormati.
 

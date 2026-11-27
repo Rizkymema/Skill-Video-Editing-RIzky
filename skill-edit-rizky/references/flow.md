@@ -32,6 +32,8 @@ python -X utf8 -I scripts/flow_kolase.py ambil <_kerja> --proyek <proyek>-2k
 ```
 (`--proyek` membaca hasil dari folder itu; nama berkas `scene-NN` atau `<proyek>-scene-NN` sama-sama dikenali).
 
+**`flow_download` bisa melapor gagal padahal berkasnya sudah ada** (uji 27 Nov 2026, video Kodak): status `failed` / `fetch failed`, tetapi ke-14 gambar 2K (1536×2752) sudah tersimpan sebagai `clip-01` … `clip-14` di `<proyek>-2k`. Jadi **sebelum mengulang, lihat dulu foldernya** (`ls … <proyek>-2k`, cek ukuran ±1,5–3,5 MB per berkas). Setiap pengulangan menambah salinan baru dengan nomor lanjutan (`clip-15`, `clip-16`, …), dan `ambil` memetakan nama ke kode menurut urutan, jadi salin hanya `clip-01` … `clip-NN` ke folder bersih (mis. `<proyek>-2k-bersih`) lalu `ambil <_kerja> --proyek <proyek>-2k-bersih`. Pratinjau Tahap 2 boleh memakai gambar resolusi biasa (`ambil … --proyek <proyek>`); versi 2K wajib sebelum render final.
+
 Catatan: `ambil` memetakan `scene-NN`/`clip-NN` ke kode lewat **urutan di `flow_batch.json`**. Bila yang diunduh berbeda dari batch awal (aset dibuat ulang, hanya sebagian diunduh), samakan urutan `aset.json` dengan urutan unduhan lalu jalankan `rencana` lagi sebelum `ambil`; kalau tidak, nama berkas tertukar. Bendera, lambang, dan bangunan khas (gedung pengadilan, ruang sidang) sering salah di Flow (bendera Denmark di ruang sidang, gedung mirip Mahkamah Agung AS): periksa dengan zoom, tulis "no flags, no emblems" bila bendera tak perlu.
 
 ## 5. Periksa
@@ -42,8 +44,7 @@ Catatan: `ambil` memetakan `scene-NN`/`clip-NN` ke kode lewat **urutan di `flow_
 - `rakit --gambar <_kerja>/gambar` menanam semua gambar sebagai WebP (sisi terpanjang ≤ 1700 px); berkas berawalan `_` dan subfolder tidak ikut.
 
 ## 6. Klip gerak (opsional, berbayar)
-**Sejak Kolase 1.3 pakai alur di `klip.md`** (`aset.json["klip"]` → `flow_kolase.py klip` → tanya kredit → `flow_generate` → `ambil-klip` → `rakit --klip …[:hijau]`, foto hidup/potongan bergerak). Catatan lama:
-Gerak tubuh manusia (tangan menekan tombol, presenter mengangguk) di acuan berasal dari klip video AI 1–3 dtk. Bila perlu: `flow_generate` video dari pelat sebagai `first_frame` (Omni 1.1 Flash 4 dtk ±7 kredit, **tanya dulu**), lalu `rakit --klip nama=klip.mp4@12` dan pakai `{ urutan: 'nama' }`. Tanpa klip, gerak cukup dari kamera + lapisan.
+Alurnya di `klip.md` (`aset.json["klip"]` → `flow_kolase.py klip` → tanya kredit → `flow_generate` → `ambil-klip` → `rakit --klip …[:hijau]`, foto hidup/potongan bergerak). Klip selalu berbayar, jadi **tanya dulu**; tanpa klip, gerak cukup dari kamera + lapisan. (Catatan lama yang menggandakan isi `klip.md` dihapus 27 Nov 2026.)
 
 ## 7. Bahan dari pengguna: foto dan klip asli (berita/tokoh nyata)
 Foto/video nyata dari internet (Wikipedia, Commons, NASA, kutipan YouTube) diambil dengan `scripts/ambil_media.py`; aturannya di `data-media.md`. Bagian ini untuk bahan yang dikirim pengguna (`ambil_media.py ambil <berkas> <_kerja> --kode … --kredit "…"` mencatatnya juga).
