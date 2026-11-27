@@ -16,7 +16,10 @@ foreach ($nama in @('skill-edit-rizky', 'sutradara-edit', 'kolase-retro')) {
 foreach ($nama in @('skill-edit-rizky', 'sutradara-edit')) {
     $tujuan = Join-Path $skills $nama
     Copy-Item -Recurse (Join-Path $akar $nama) $tujuan
-    if ($nama -eq 'skill-edit-rizky') { Copy-Item -Recurse (Join-Path $akar 'aset') (Join-Path $tujuan 'aset') }
+    if ($nama -eq 'skill-edit-rizky') {
+        Copy-Item -Recurse (Join-Path $akar 'aset') (Join-Path $tujuan 'aset')
+        if (Test-Path (Join-Path $akar 'sfx')) { Copy-Item -Recurse (Join-Path $akar 'sfx') (Join-Path $tujuan 'sfx') }   # pustaka SFX (audio tidak di git)
+    }
     Get-ChildItem -Recurse $tujuan -Include '__pycache__' -Directory | Remove-Item -Recurse -Force
     Write-Output "terpasang: $tujuan"
 }

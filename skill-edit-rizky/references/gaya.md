@@ -93,6 +93,10 @@ Kalimat pendek (≤ 14 kata), angka ditulis angka, tanpa salam/"tahukah kamu", t
 | `iris` | penutup / fokus satu hal | lensa bulat (Buffett) |
 | `kilat` | potong di ketukan dengan kilatan | "YOU ARE GUILTY" |
 | `cocok` (+`cocok: { dari, ke }`) | **benda yang sama bertahan saat dunia berganti**: amplop di tangan berpindah jadi surat di meja, foto di koran jadi foto di dinding, bulan tetap di langit saat latar berganti. Benda melayang dari tempatnya di adegan lama ke tempatnya di adegan baru (bila gambarnya beda, saling melebur di jalan); latar lama kabur, latar baru menajam | reel DffBJweOo9e (benda tetap, dunia berganti); bulan + roket di acuan wabah |
+| `portal` (+`portal: { kotak, bentuk }`) | **1.5.** jendela/pintu/layar/lensa di adegan lama sudah memperlihatkan adegan berikut, kamera masuk lewat lubangnya (lebih natural dari `dorong` karena isinya sudah terlihat sebelum potong) | reel Del7Vohuw9D: jendela kamar jadi pintu ke pemandangan (±1,5 dtk) |
+| `lubang` (+`titikMasuk`, `warnaMasuk`) | **1.5.** adegan baru tumbuh sebagai lingkaran dari benda bulat di adegan lama (roda, lensa, lampu, koin, pupil, piring), bercincin cahaya | reel Del7Vohuw9D: lingkaran dari benda (±3,2 · 7,3 · 24,8 dtk) |
+| `sapu` (+`arahMasuk`) | **1.5.** benda gelap lewat sangat dekat lensa menutup layar, dunia berganti di baliknya (orang lewat, tiang, bayangan kamera); terasa seperti satu bidikan panjang | reel Del7Vohuw9D: sapuan dekat lensa (±30,8 dtk). Gelap penuh 1–2 bingkai di titik potong disengaja (cek mengecualikan ±0,1 dtk); adegan tujuan pakai gambar, bukan polos gelap |
+| `lepas` (+`arahMasuk`) | **1.5.** kertas/papan klip/foto/kartu diangkat ke arah kamera, adegan berikut sudah ada di bawahnya ("membalik halaman" dalam ruang) | reel Del7Vohuw9D: papan klip terangkat (±26,8 dtk) |
 | `zoom`, `lebur` | hanya bila tak ada yang lain cocok | — |
 
 Di dalam adegan, lapisan sendiri punya `masuk`: `terbang` (dari dekat lensa, besar + kabur → tajam), `geser` (dari tepi + blur gerak), `jatuh` (memantul + guncang), `lempar` (berputar), `pop`, `tumbuh`, `kabur`, `naik`, `sapu`, `cap`. Lapisan depan (mik, kepala penonton, tangan) diberi `z` 1,6–2,4 supaya ikut melesat saat perpindahan.
@@ -118,6 +122,8 @@ Gabungkan dengan daftar (`rig: ['napas', { jenis: 'goyang', fase: .3 }]`). Sudut
 - **Kilau di puncak**: kata kunci/benda yang "menyala" (palu diketuk, keputusan, angka puncak) diberi `efek: [{ jenis: 'kilau', t, titik: [x, y] }]` (sinar + cahaya, bunyi boom otomatis).
 - **Kartu foto asli di atas ilustrasi**: foto/video nyata (dari `ambil_media.py`) tampil sebagai kartu/layar miring berbayangan di atas pelat ilustrasi, dengan label kredit di bawahnya, lalu pindah dengan `cocok`/`bingkai`.
 - **Teks di antara lapisan**: judul diletakkan di belakang potongan depan (urutan `lapis`: latar → teks → potongan) supaya terlihat bertumpuk dalam ruang.
+
+**4. Elemen hidup di dalam gambar (Kolase 1.5, reel acuan Del7Vohuw9D).** Di reel itu hampir tidak ada foto yang benar-benar diam: lampu jendela menyala satu-satu, layar berkedip, daun bergoyang, benda kecil berputar, sementara kamera hanya bergerak pelan. Satu foto terasa seperti dunia yang hidup, jadi tidak perlu banyak gambar baru. Di mesin: `elemen: [...]` pada lapisan gambar (wilayah dari gambar yang sama, gerak sendiri), plus `poros`, `condong`, `induk`, dan gerak sekunder (`putaran`, `goyang`, `denyut`, `ombak`, `arus`, `kedip`) untuk lapisan. Cara membaca elemen, tabel per jenis benda, dan aturan halusnya: `references/gerak-elemen.md`. Cahaya ruang tanpa gambar baru: efek `kerucut` (lampu gantung/sorot) dan `jendela` (cahaya jendela miring di dinding).
 
 ## 4b. Klip gerak dan efek ala After Effects (Kolase 1.3)
 Rincian di `klip.md`. Ringkasnya:
@@ -156,6 +162,7 @@ Rincian di `klip.md`. Ringkasnya:
 9. Kartu identitas visual (§0.3) terlihat di hasil: benda khas dan transisi tanda tangan muncul, berbeda dari video terakhir.
 10. Tidak ada potongan yang ujungnya terpotong lurus di tengah layar (lengan, badan, kerumunan menempel ke tepi; §4a).
 11. Potongan makhluk hidup/benda lentur bergerak dengan `rig`; tidak ada subtitle di bawah kecuali diminta.
+11a. Gambar utama punya 2–5 elemen hidup yang halus (`gerak-elemen.md` §8); tidak ada bayangan ganda dari elemen yang bergeser (`tambal`).
 12. Foto/video nyata punya label kredit di layar selama tampil dan tercatat di `media.json`.
 13. Klip Flow (bila ada) mulus dari fotonya, tanpa wajah/tangan berubah bentuk; efek tidak menutupi teks/data.
 14. Lolos QC-1 `sutradara-edit/pustaka/polish/qc.md`: hook terbaca tanpa suara, progresi + payoff jelas, tiap transisi punya motivasi, anggaran efek dan transisi heboh lolos, tidak ada tanda "AI/templat" (§6).

@@ -42,6 +42,7 @@ Satu kalimat: fakta aneh yang diceritakan seperti iklan majalah lama yang ceria:
 | Hasil | tampak atas + bilah rute | km | `sentak` ke bawah | mesin melaju |
 
 ## 4. Preset mesin Kolase
+**Sejak 27 Nov 2026 gaya ini tertanam di mesin `skill-edit-rizky`: cukup `tema: 'arsip-pop'`** (grade, warna aksen, latar bawaan, dan gaya huruf ikut otomatis; musik tetap ditulis sendiri). Blok di bawah = rincian nilainya, dipakai untuk menimpa sebagian atau sebagai contoh lapisan.
 ```js
 const KONFIG = {
   judul: '…', tema: 'tv',

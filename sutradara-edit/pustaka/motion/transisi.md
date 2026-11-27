@@ -60,11 +60,11 @@ Format: **Kapan** · **Kenapa** · **Cara** · **Hindari** · **Di mesin Kolase*
 
 ### 3.3 Object transition (benda lewat menutup layar)
 - **Kapan**: ada benda depan alami (orang lewat, tiang, pintu, tangan, kertas). **Kenapa**: potongan tersembunyi di balik benda nyata, terasa satu bidikan panjang. **Cara**: benda depan (z besar, kabur) melintas 0,3–0,45 dtk `inOutCubic`, adegan B mulai saat benda menutupi ≥ 95% layar, benda melanjutkan keluar di adegan B. **Hindari**: benda yang tidak ada hubungannya dengan dunia adegan.
-- **Di mesin**: potongan Flow (`z: 2–2.4`, `blur: 8`) dengan `gerak` x dari −500 ke 1580 di akhir adegan A dan lanjutan geraknya di awal B; `masuk: 'lebur', lamaMasuk: .06` di B supaya tidak dihitung potong keras. *Celah mesin*: belum ada perpindahan "lewat-benda" sekali tulis. **Di editor lain**: AE/CapCut mask mengikuti tepi benda.
+- **Di mesin**: potongan Flow (`z: 2–2.4`, `blur: 8`) dengan `gerak` x dari −500 ke 1580 di akhir adegan A dan lanjutan geraknya di awal B; `masuk: 'lebur', lamaMasuk: .06` di B supaya tidak dihitung potong keras. **Sekali tulis (Kolase 1.5)**: `masuk: 'sapu', arahMasuk: 'kiri'` (benda gelap kabur lewat dekat lensa, `warnaMasuk` untuk warnanya); gelap penuh 1–2 bingkai di titik potong memang disengaja (cek mengecualikan ±0,1 dtk); adegan tujuan pakai gambar, bukan polos gelap. **Di editor lain**: AE/CapCut mask mengikuti tepi benda.
 
 ### 3.4 Mask transition
 - **Kapan**: B terlihat melalui bentuk di A (jendela, layar, huruf, lubang kunci, siluet). **Kenapa**: membuat hubungan "di dalam" atau "di balik". **Cara**: bentuk diam di A, kamera menyelam ke bentuk 0,6–0,9 dtk `inOutCubic` sampai B memenuhi layar. **Hindari**: bentuk yang tidak bermakna (bintang, hati) hanya karena tersedia.
-- **Di mesin**: `bingkai: { lapis: 'id', bentuk: 'kotak'|'bulat'|'peti'|'kunci' }` + `arahMasuk: 'masuk'` (menyelam) atau tanpa (adegan lama mundur jadi foto di B); `iris` + `titikMasuk` (lingkaran). *Celah mesin*: mask berbentuk huruf/siluet bebas.
+- **Di mesin**: `bingkai: { lapis: 'id', bentuk: 'kotak'|'bulat'|'peti'|'kunci' }` + `arahMasuk: 'masuk'` (menyelam) atau tanpa (adegan lama mundur jadi foto di B); `iris` + `titikMasuk` (lingkaran). **Kolase 1.5**: `masuk: 'portal', portal: { kotak: [x, y, w, h], bentuk }` (lubangnya bagian dari foto A, mis. jendela di pelat, tanpa lapisan ber-`id`); `masuk: 'lubang', titikMasuk: [x, y]` (lingkaran tumbuh dari benda bulat di A, bercincin cahaya `warnaMasuk`). *Celah mesin*: mask berbentuk huruf/siluet bebas.
 
 ### 3.5 Shape transition
 - **Kapan**: gaya grafis (Minimalist, Corporate, Y2K, Experimental), pergantian bab. **Kenapa**: bentuk geometris memberi ritme desain. **Cara**: bentuk tumbuh dari titik yang punya arti (tombol, logo, titik data) menutup 0,3–0,4 dtk, membuka B 0,3–0,4 dtk, warna dari palet. **Hindari**: bentuk dekoratif di gaya dokumenter/sinematik.
@@ -97,6 +97,10 @@ Format: **Kapan** · **Kenapa** · **Cara** · **Hindari** · **Di mesin Kolase*
 ### 3.12 Light transition (kilat, cahaya bocor, terbakar)
 - **Kapan**: kenangan (cahaya bocor), akhir babak/lompatan zaman (film terbakar), potong di ketukan (kilat). **Kenapa**: cahaya menyembunyikan potongan dan memberi suasana. **Cara**: kilat 4–8 bingkai; cahaya bocor 1–1,5 dtk menyapu melewati titik potong; terbakar 0,6–0,9 dtk dari tepi. **Hindari**: kilat putih berulang (melelahkan mata, berisiko untuk penonton sensitif cahaya); lebih dari 3 kilat per video.
 - **Di mesin**: `masuk: 'kilat', warnaMasuk` (0,24 dtk); `efek: { jenis: 'cahaya', dari, lama: 1.4 }` di akhir A; `efek: { jenis: 'bakar', lama: .8 }`.
+
+### 3.12a Lift transition (benda terangkat ke kamera)
+- **Kapan**: A adalah kertas, papan klip, foto, kartu, layar HP yang bisa "diangkat". **Kenapa**: membalik halaman di dalam ruang; B terasa sudah ada di bawahnya. **Cara**: A membesar ±2×, miring 8–12°, kabur, memudar 0,5–0,7 dtk `inCubic`; B sedikit mundur dari 1,06 ke 1. **Hindari**: A yang bukan benda datar (orang, ruangan).
+- **Di mesin**: `masuk: 'lepas', arahMasuk: 'bawah'|'atas'|'kiri'|'kanan', putarMasuk: 10` (Kolase 1.5; dari reel @earn.edits `Del7Vohuw9D` ±26,8 dtk).
 
 ### 3.13 Seamless environment transition
 - **Kapan**: subjek/benda tetap, dunia di sekitarnya berganti (zaman, musim, tempat). **Kenapa**: kontinuitas subjek + perubahan latar = cerita perubahan dalam satu napas. **Cara**: subjek di posisi dan ukuran sama, latar lama kabur keluar, latar baru menajam; kamera terus bergerak searah. **Hindari**: subjek bergeser posisi di titik potong.
@@ -152,5 +156,5 @@ Bunyi membuat transisi terasa disengaja; tanpa bunyi transisi besar terasa "mela
 - Liquid transition (cairan menutup layar).
 - Displacement map transition (distorsi berbasis tekstur).
 - Shape morph (bentuk A berubah menjadi bentuk B) dan mask berbentuk huruf/siluet bebas.
-- Object-wipe sekali tulis (benda depan melintas otomatis di kedua adegan).
+- ~~Object-wipe sekali tulis~~ → `sapu` (Kolase 1.5); mask dari bagian foto → `portal`, lingkaran dari benda → `lubang`, benda terangkat → `lepas`.
 - Transisi berbasis peta kedalaman (lapisan dekat pergi lebih dulu dari foto tunggal).

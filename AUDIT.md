@@ -95,7 +95,8 @@ Belum dikerjakan (mesin sengaja tidak diubah di upgrade ini). Tiap fitur baru: t
 | 3 | Transisi liquid/displacement, morph bentuk, topeng dari alfa potongan (`bingkai.bentuk: 'gambar'`) | transisi bermotivasi bentuk | `cocok` dua gambar, `iris`, klip Flow |
 | 3 | Parallax dari peta kedalaman satu foto, fokus kedalaman otomatis (`KONFIG.fokus`) | 2,5D dari satu gambar | potong lapisan di Flow (pelat + potongan) |
 | 4 | `KONFIG.patah` (on twos global), kamera `'lompat'` (jump cut), cek loop (bingkai akhir vs awal), peta retensi per 3 dtk | Piksel Kertas, short-form | easing tangga, keyframe bertangga |
-| 4 | Tema baru dari resep: `vhs`, `piksel`, `kaca`, `emas` | resep jadi satu kata | tempel preset resep |
+| ✓ | Tema baru dari resep | **selesai 27 Nov 2026**: 8 tema bawaan `sinema-kasus` … `diorama-kreator` di `TEMA` + `GRADE_DASAR` | — |
+| ✓ | Elemen hidup + rigging lapisan + sambungan dari benda (Kolase 1.5) | **selesai 27 Nov 2026** (bedah reel `Del7Vohuw9D`): `elemen` di dalam satu gambar, gerak sekunder (`putaran`/`goyang`/`denyut`/`ombak`/`arus`/`kedip`), `poros` `[u, v]`, `condong`, `induk`, perpindahan `lubang`/`portal`/`sapu`/`lepas`, efek `kerucut`/`jendela`, `scripts/elemen.py`, `references/gerak-elemen.md`. Sebagian menutup baris "morph bentuk" dan "2,5D dari satu gambar" di atas (lubang/portal dari benda; satu foto dihidupkan per bagian) | — |
 Rincian per modul ada di bagian *Celah mesin* masing-masing.
 
 ## 6. Teknik modern yang ditambahkan (ringkas)

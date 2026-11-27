@@ -81,11 +81,11 @@ Format: **Kapan** · **Kenapa** · **Cara** · **Hindari** · **Di mesin Kolase*
 
 ### 4.4 Follow through
 - **Kapan**: setelah benda berhenti (label tergantung, kertas mendarat, rambut/kain). **Kenapa**: bagian yang lentur tetap bergerak sesaat = nyata. **Cara**: ayunan teredam 2–3 kali dalam 0,6–1,2 dtk; overshoot + settle. **Hindari**: ayunan tanpa redam (seperti rusak).
-- **Di mesin**: `ayun: { sudut: 10–14, periode: 1.1, redam: 1.4 }` (label harga, papan gantung), `rig: 'kibar'` (kertas/bendera), `tumbuh` (pegas).
+- **Di mesin**: `ayun: { sudut: 10–14, periode: 1.1, redam: 1.4 }` (label harga, papan gantung), `rig: 'kibar'` (kertas/bendera), `tumbuh` (pegas). Kolase 1.5: `gerak` 3 keyframe dengan `poros` di engsel/pangkal + `condong` (mis. `[[0, { condong: 0 }], [.8, { condong: 9 }, 'outBack'], [1.8, { condong: 0 }, 'pegas']]`), dan bagian di dalam foto lewat `elemen` (`../../../skill-edit-rizky/references/gerak-elemen.md`).
 
 ### 4.5 Overlapping action
 - **Kapan**: beberapa unsur satu kelompok (daftar ikon, kata, kartu). **Kenapa**: unsur yang tiba berurutan terasa organik, bukan blok. **Cara**: stagger 2–4 bingkai; unsur depan (z besar) sedikit lebih lambat dari belakang; bagian tubuh tokoh tiba tidak bersamaan. **Hindari**: stagger yang sama persis untuk semua kelompok di video (pola terbaca).
-- **Di mesin**: `t: 'L06.w1+0.1'`, `'+0.18'`… per unsur, atau `tiap` pada teks; `rig: ['napas', { jenis: 'goyang', fase: .3 }]` pada tokoh.
+- **Di mesin**: `t: 'L06.w1+0.1'`, `'+0.18'`… per unsur, atau `tiap` pada teks; `rig: ['napas', { jenis: 'goyang', fase: .3 }]` pada tokoh. Kolase 1.5: gerak sekunder lapisan/elemen dengan `fase` berbeda (0 · .3 · .55) dan `laju` kedip berbeda, supaya benda sejenis tidak serempak; label yang menempel pada benda memakai `induk: 'id'` (ikut geraknya lalu menyusul dengan geraknya sendiri).
 
 ### 4.6 Timing
 - **Kapan**: menentukan durasi tiap gerak. **Kenapa**: jumlah bingkai = berat dan emosi. **Cara**: tabel §3.1; benda berat +30–50% bingkai; adegan serius lebih lambat; hook lebih cepat. **Hindari**: semua gerak berdurasi sama (0,5 dtk di mana-mana).
@@ -108,7 +108,7 @@ Format: **Kapan** · **Kenapa** · **Cara** · **Hindari** · **Di mesin Kolase*
 
 ### 4.11 Secondary action
 - **Kapan**: saat aksi utama berlangsung tapi adegan perlu hidup (tokoh bernapas saat teks muncul, debu melayang). **Kenapa**: dunia terasa terus berjalan. **Cara**: amplitudo kecil, ritme lebih lambat dari aksi utama, tidak berbunyi. **Hindari**: aksi sekunder yang lebih menarik dari aksi utama.
-- **Di mesin**: `rig: 'napas'`/`'angguk'`, `hidup: 4–6`, `efek: partikel debu`, `kilap` sekali.
+- **Di mesin**: `rig: 'napas'`/`'angguk'`, `hidup: 4–6`, `efek: partikel debu`, `kilap` sekali. Kolase 1.5: gerak sekunder `putaran` (roda/kipas/jarum), `goyang` (daun, papan), `denyut`, `ombak` (mengapung), `arus` (awan/asap), `kedip` (lampu/layar), pada lapisan atau pada `elemen` di dalam satu gambar; efek `kerucut`/`jendela` untuk cahaya ruang.
 
 ---
 
@@ -155,5 +155,5 @@ Format: **Kapan** · **Kenapa** · **Cara** · **Hindari** · **Di mesin Kolase*
 ## Celah mesin
 - Skala tidak seragam (`skalaX`/`skalaY`) untuk squash & stretch dan deformasi.
 - Jalur gerak lengkung (bezier) antar-keyframe untuk arcs.
-- Kedip opasitas (flicker) per lapisan/efek.
-- Wiggle frekuensi tinggi per lapisan (`hidup` hanya drift pelan).
+- ~~Kedip opasitas per lapisan~~ → `kedip` (Kolase 1.5; pada elemen = terang-gelap).
+- Wiggle frekuensi tinggi acak per lapisan (sebagian: `ombak`/`goyang` periode pendek, osilasi sinus, bukan derau).

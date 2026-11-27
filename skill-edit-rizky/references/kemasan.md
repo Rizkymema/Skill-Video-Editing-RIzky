@@ -7,8 +7,11 @@
 - Komentar sematan: pertanyaan lanjutan ("Menurutmu, kalau tidak ada krisis 1998, N250 bakal laku?").
 - `synthetic`: `true` (gambar realistis buatan AI tentang kejadian nyata wajib dilabel konten sintetis di YouTube).
 
-## 2. Thumbnail
-Mesin bersama `_thumbnail` (`D:\automation\Video AI\_thumbnail\PANDUAN.md`): subjek = gambar Flow terkuat (pelat atau potongan, mis. `gambar/pesawat.png`), teks dari mesin. Tata letak `dosir` atau `kertas` paling cocok dengan gaya arsip. Hasil `thumbnail.png` 16:9 + `thumbnail_short.png` 9:16.
+## 2. Sampul
+**Utama (sejak 28 Nov 2026): Google Flow, `references/sampul.md`.** Satu sampul dengan rasio yang sama dengan video (9:16 → `sampul.jpg` 1080×1920; 16:9 → 1280×720), desain poster mengikuti style video (`scripts/sampul.py`). Di cloud: kirim prompt `prompt-sampul.md` ke pengguna.
+Cadangan (Flow gagal / ejaan judul terus salah): mesin bersama `_thumbnail` (`D:\automation\Video AI\_thumbnail\PANDUAN.md`) dengan latar = varian Flow tanpa teks; tetap satu rasio sesuai video.
 
-## 3. Unggah
-Lewat skill `unggah-youtube` ke `D:\automation\Video AI\Hasil Video\Edit Rizky\Umum\<tanggal> <Judul>\`: MP4 final + `thumbnail.png` + `youtube.json` (+ `"channel"` pilihan Tahap 2, `categoryId` `27` atau `25`) + `info YouTube.md` + `<Judul>.html`. `_kerja\` dibuang ke Recycle Bin setelah terunggah (kecuali saya bilang mau revisi/sekuel). Kiriman ke saya: MP4 final + HTML.
+## 3. Simpan, unggah, kirim
+- Semua hasil di `D:\automation\Skill-Video-Editing-Rizky\Hasil Video\<tanggal> <Judul>\` (permintaan pengguna 28 Nov 2026): `<Judul>.mp4` + `<Judul>.html` + `sampul.jpg` + `prompt-sampul.md` + `info YouTube.md` (+ `youtube.json` bila diunggah: `"thumbnail": "sampul.jpg"`, `"channel"` pilihan Tahap 2, `categoryId` `27` atau `25`). `Hasil Video/` tidak di-commit.
+- Unggah hanya bila dipilih: lewat skill `unggah-youtube` (skill itu menyalin berkas ke foldernya sendiri). `_kerja\` dibuang ke Recycle Bin setelah terunggah (kecuali saya bilang mau revisi/sekuel).
+- **Kiriman ke saya sesudah video jadi**: MP4 final (+ 720p) + HTML + `sampul.jpg` + di chat: 3 judul (terkuat ditandai) + deskripsi siap tempel + tagar. Di cloud: prompt sampul di chat menggantikan `sampul.jpg`.

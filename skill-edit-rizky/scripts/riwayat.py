@@ -1,6 +1,6 @@
 """Riwayat pilihan visual skill-edit-rizky supaya tiap video beda (gaya.md §0.4).
 
-  python -X utf8 riwayat.py lihat [--n 5] [--akar "D:\\automation\\Video AI\\Hasil Video"]
+  python -X utf8 riwayat.py lihat [--n 5] [--akar "D:\\automation\\Skill-Video-Editing-Rizky\\Hasil Video"]
       Tampilkan pilihan N video terakhir + daftar "hindari" untuk video berikutnya.
   python -X utf8 riwayat.py catat <_kerja>
       Baca _kerja/konfig.js (+ naskah.txt) lalu simpan/perbarui satu baris riwayat (kunci = judul).
@@ -33,7 +33,9 @@ def akar_bawaan():
         a = cari_akar(k)
         if a:
             return a
-    for k in [r'D:\automation\Video AI\Hasil Video', os.path.join(os.getcwd(), 'Hasil Video')]:
+    # sejak 28 Nov 2026 hasil skill ini disimpan di repo (lama: D:\automation\Video AI\Hasil Video)
+    repo = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'Hasil Video')
+    for k in [r'D:\automation\Skill-Video-Editing-Rizky\Hasil Video', repo, os.path.join(os.getcwd(), 'Hasil Video'), r'D:\automation\Video AI\Hasil Video']:
         if os.path.isdir(k):
             return k
     return os.path.join(os.getcwd(), 'Hasil Video')
@@ -81,7 +83,7 @@ def baca_konfig(kerja):
         'judul': g(r"judul:\s*'([^']*)'", os.path.basename(os.path.dirname(os.path.abspath(kerja)))),
         'tanggal': date.today().isoformat(),
         'folder': os.path.dirname(os.path.abspath(kerja)),
-        'tema': g(r"\btema:\s*'(\w+)'", 'arsip'),
+        'tema': g(r"\btema:\s*'([\w-]+)'", 'arsip'),
         'grade': g(r"\bgrade:\s*'(\w+)'"),
         'musik': g(r"sintesis:\s*'(\w+)'"),
         'pola_cerita': pola or 'balik',

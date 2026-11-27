@@ -69,6 +69,12 @@ Patokan satu video 45 dtk: 9–12 pelat/foto + 4–8 potongan + 4–8 benda bert
 - **Hindari**: klip yang wajah/tangannya berubah bentuk; klip yang kamera-nya melompat (periksa 8 bingkai/dtk).
 - **Di mesin Kolase**: `{ gambar: 'nelayan', klip: { kode: 'nelayan-hidup', t: 'L08.w9', lebur: .25 } }`, `klip: { tahan: true }` untuk berhenti dan kembali jadi foto (`klip.md` §3). Berbayar (Flow), ditanya di dialog persetujuan.
 
+### Elemen hidup di dalam satu foto (Kolase 1.5)
+- **Kapan**: hampir setiap foto utama, terutama bila anggaran Flow/klip terbatas. **Kenapa**: acuan @earn.edits `Del7Vohuw9D` hampir tidak punya foto yang benar-benar diam: lampu menyala satu-satu, layar berkedip, daun bergoyang, sementara kamera pelan; satu foto terasa seperti dunia hidup, gratis dan tanpa risiko bentuk berubah seperti klip AI.
+- **Cara**: baca isi gambar (`skill-edit-rizky/scripts/elemen.py saran` + `kisi`), pilih 2–5 bagian yang bisa bergerak di tempat (roda, layar, lampu, jendela, daun, kain, asap), satu jadi pusat perhatian, sejenis beda fase. Gerak besar yang memperlihatkan belakang benda tetap butuh potongan terpisah/klip.
+- **Hindari**: semua bagian bergerak sekaligus; amplitudo besar (terlihat efek tempelan); bayangan ganda (pakai `tambal`).
+- **Di mesin Kolase**: `{ gambar: 'lab', elemen: [{ bulat: [.28, .57, .06], kedip: { kuat: .45, laju: 7 } }, { kotak: [.6, 0, 1, .4], poros: [.92, .42], goyang: { sudut: 1.6, periode: 3.4 }, tambal: true }] }`; panduan lengkap `skill-edit-rizky/references/gerak-elemen.md`.
+
 ### Benda melayang (floating objects)
 - **Kapan**: ikon/benda simbol yang menemani penjelasan (bohlam, koin, jam, kunci), benda kunci yang berpindah antar-adegan.
 - **Kenapa**: gerak melayang halus membuat bingkai terasa hidup tanpa mencuri perhatian.

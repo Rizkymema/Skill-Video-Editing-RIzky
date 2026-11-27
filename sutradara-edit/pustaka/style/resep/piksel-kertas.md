@@ -41,6 +41,7 @@ Satu kalimat: ilustrasi potongan kertas di atas kertas zaitun gelap, huruf ala g
 | Payoff | benda emas/kuning di sorot | judul + pita | luruh piksel | nada kemenangan pendek |
 
 ## 4. Preset mesin Kolase
+**Sejak 27 Nov 2026 gaya ini tertanam di mesin `skill-edit-rizky`: cukup `tema: 'piksel-kertas'`** (grade, warna aksen, latar bawaan, dan gaya huruf ikut otomatis; musik tetap ditulis sendiri). Blok di bawah = rincian nilainya, dipakai untuk menimpa sebagian atau sebagai contoh lapisan.
 ```js
 const KONFIG = {
   judul: '…', tema: 'kartu',

@@ -41,6 +41,7 @@ Satu kalimat: dongeng gelap yang dijelaskan seperti penyidik sejarah, api jingga
 | Penutup | hamparan jaring/kelelawar, satu kata | kata tipis | `bakar` / partikel menutup | hening lalu satu nada |
 
 ## 4. Preset mesin Kolase
+**Sejak 27 Nov 2026 gaya ini tertanam di mesin `skill-edit-rizky`: cukup `tema: 'legenda-gelap'`** (grade, warna aksen, latar bawaan, dan gaya huruf ikut otomatis; musik tetap ditulis sendiri). Blok di bawah = rincian nilainya, dipakai untuk menimpa sebagian atau sebagai contoh lapisan.
 ```js
 const KONFIG = {
   judul: '…', tema: 'dosir',

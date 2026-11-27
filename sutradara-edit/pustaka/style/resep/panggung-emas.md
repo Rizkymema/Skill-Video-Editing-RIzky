@@ -40,6 +40,7 @@ Satu kalimat: pengumuman bertaruhan tinggi yang terasa seperti malam penghargaan
 | Ajakan | hitam, kalimat kecil (di deskripsi, bukan narasi) | — | `lebur` | ekor gema |
 
 ## 4. Preset mesin Kolase
+**Sejak 27 Nov 2026 gaya ini tertanam di mesin `skill-edit-rizky`: cukup `tema: 'panggung-emas'`** (grade, warna aksen, latar bawaan, dan gaya huruf ikut otomatis; musik tetap ditulis sendiri). Blok di bawah = rincian nilainya, dipakai untuk menimpa sebagian atau sebagai contoh lapisan.
 ```js
 const KONFIG = {
   judul: '…', tema: 'modern',

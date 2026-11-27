@@ -29,14 +29,19 @@ tanpa layar (Playwright), supaya Claude bisa melihat bingkai sendiri dan mengung
 naskah.txt: satu baris narasi per baris ("L01 | Teks â€¦"); urutannya = urutan di rekaman. Baris berawalan # = catatan
             (sumber, arahan) dan tidak ikut dibaca; "# babak 3" menandai babak untuk baris-baris sesudahnya.
 --baris DIR: berkas L01.mp3, L02.mp3, â€¦ (satu berkas per baris) dipasangkan ke id yang sama di naskah.
---sfx DIR:   semua berkas audio di DIR ditanam sebagai SFX berkas (nama = nama berkas tanpa ekstensi):
-             di konfig dipakai sebagai sfx { t, berkas: 'tawa', vol, lama, ulang }.
+SFX: pustaka sfx/ (scripts/pustaka_sfx.py, katalog.json) dipakai OTOMATIS: bunyi bawaan mesin diganti berkas pustaka
+             (peta), nama pustaka/judul Epidemic yang ditulis di konfig ikut ditanam (hanya yang dipakai).
+             --pustaka-sfx DIR = pustaka lain, --tanpa-pustaka-sfx = bunyi sintesis lama.
+--sfx DIR:   (boleh berulang, termasuk subfolder) SFX khusus proyek, mis. _kerja/audio/sfx: semua ditanam, menang atas
+             pustaka; di konfig dipakai sebagai sfx { t, berkas: 'tawa', vol, lama, ulang }.
 
 Di PC Windows ini panggil dengan Python312 (alias "python" rusak):
   C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -X utf8 scripts\\jalankan.py â€¦
 """
 import argparse, base64, io, json, mimetypes, os, re, sys, time, urllib.error, urllib.request
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import pustaka_sfx
 
 AKAR = Path(__file__).resolve().parent.parent
 TEMPLAT = AKAR / 'assets' / 'templat.html'
@@ -51,6 +56,9 @@ def data_uri(berkas):
     return f'data:{tipe};base64,' + base64.b64encode(p.read_bytes()).decode('ascii')
 
 
+UCAP = {}  # ejaan ucapan khusus dari naskah: "# ucap: HP = ha-pe; Face ID = feis ai-di" (28 Nov 2026)
+
+
 def baca_naskah(berkas):
     baris, babak = [], None
     for s in [x.strip() for x in Path(berkas).read_text(encoding='utf-8').splitlines()]:
@@ -60,6 +68,13 @@ def baca_naskah(berkas):
             m = re.match(r'#\s*babak\s*(\d+)', s, re.I)
             if m:
                 babak = int(m.group(1))
+            m = re.match(r'#\s*ucap\s*:\s*(.+)$', s, re.I)
+            if m:  # token naskah (tanpa tanda baca di tepinya) = ucapan untuk TTS; subtitle dan rujukan tetap memakai token naskah
+                for pasang in m.group(1).split(';'):
+                    if '=' in pasang:
+                        k, v = pasang.split('=', 1)
+                        if k.strip() and v.strip():
+                            UCAP[k.strip()] = v.strip()
             continue
         m = re.match(r'^\s*([A-Za-z]{1,4}\d{1,3})\s*[|:]\s*(.+)$', s)
         b = {'id': m.group(1), 'teks': m.group(2).strip()} if m else {'id': f'L{len(baris) + 1:02d}', 'teks': s}
@@ -106,7 +121,9 @@ def eja_token(tok):
     """satu token naskah -> daftar kata yang diucapkan (tanda baca ikut di kata pertama/terakhir)"""
     m = re.match(r'^([^\w]*)(.*?)([^\w]*)$', tok, re.S)
     depan, inti, belakang = m.group(1), m.group(2), m.group(3)
-    if inti.isdigit() and len(inti) <= 12 and not (len(inti) > 1 and inti[0] == '0'):
+    if inti in UCAP:
+        kata = UCAP[inti].split()
+    elif inti.isdigit() and len(inti) <= 12 and not (len(inti) > 1 and inti[0] == '0'):
         kata = terbilang(int(inti))
     elif inti.isalpha() and inti.isupper() and 2 <= len(inti) <= 4 and inti not in _BACA_SEBAGAI_KATA:
         kata = [_HURUF[c] for c in inti if c in _HURUF]
@@ -114,6 +131,15 @@ def eja_token(tok):
         return [tok]
     kata[0] = depan + kata[0]; kata[-1] = kata[-1] + belakang
     return kata
+
+
+def teks_ucap_khusus(baris):
+    """teks untuk TTS dengan ejaan ucapan khusus naskah (# ucap: …) saja; angka/singkatan lain dibiarkan"""
+    out = []
+    for t in teks_ucap(baris).split():
+        m = re.match(r'^([^\w]*)(.*?)([^\w]*)$', t, re.S)
+        out.append(m.group(1) + UCAP[m.group(2)] + m.group(3) if m.group(2) in UCAP else t)
+    return ' '.join(out)
 
 
 def teks_eja(baris):
@@ -167,7 +193,7 @@ def ringkas_tempo(kata, label):
 
 
 def suara_eleven(a, baris, keluar):
-    teks, grup = (teks_ucap(baris), None) if a.tanpa_eja else teks_eja(baris)
+    teks, grup = (teks_ucap_khusus(baris), None) if a.tanpa_eja else teks_eja(baris)
     if a.perkiraan:
         print(f'perkiraan kredit ElevenLabs: Â±{len(teks)} karakter ({len(baris)} baris, {len(teks.split())} kata)'); return
     kunci = os.environ.get('ELEVENLABS_API_KEY') or (KUNCI_FILE.read_text(encoding='utf-8').strip() if KUNCI_FILE.exists() else '')
@@ -196,10 +222,10 @@ def suara_eleven(a, baris, keluar):
 def suara_edge(a, baris, keluar):
     import asyncio
     import edge_tts
-    teks = teks_ucap(baris)
+    teks = teks_ucap(baris); ucap = teks_ucap_khusus(baris)  # ejaan khusus (# ucap:) dikirim ke TTS, waktu kembali ke token naskah
 
     async def jalan():
-        kom = edge_tts.Communicate(teks, a.suara or EDGE_BAWAAN, rate=a.laju, boundary='WordBoundary')
+        kom = edge_tts.Communicate(ucap, a.suara or EDGE_BAWAAN, rate=a.laju, boundary='WordBoundary')
         audio, kata = bytearray(), []
         async for ch in kom.stream():
             if ch['type'] == 'audio':
@@ -212,7 +238,7 @@ def suara_edge(a, baris, keluar):
     (keluar / 'narasi.mp3').write_bytes(audio)
     # Edge memecah tanda baca/angka berbeda dari naskah: samakan jumlah kata dengan naskah bila bisa
     kata_naskah = teks.split()
-    if len(kata) != len(kata_naskah) or any(' ' in k[2] for k in kata):
+    if ucap != teks or len(kata) != len(kata_naskah) or any(' ' in k[2] for k in kata):
         kata = samakan_kata(kata, kata_naskah)
     (keluar / 'kata.json').write_text(json.dumps(kata, ensure_ascii=False), encoding='utf-8')
     print(f'ok {keluar / "narasi.mp3"} Â· Edge {a.suara or EDGE_BAWAAN} Â· laju {a.laju}')
@@ -437,9 +463,12 @@ def rakit(a):
     if a.musik:
         suara_ = suara_ or {}
         suara_['musik'] = {'src': data_uri(a.musik), 'vol': a.vol_musik}
-    if a.sfx:
+    pustaka = None if a.tanpa_pustaka_sfx else pustaka_sfx.cari_pustaka(a.pustaka_sfx)
+    if pustaka or a.sfx:
         suara_ = suara_ or {}
-        suara_['sfxBerkas'] = {f.stem: data_uri(f) for f in sorted(Path(a.sfx).iterdir()) if f.suffix.lower() in ('.mp3', '.wav', '.ogg', '.m4a')}
+        suara_.update(pustaka_sfx.untuk_rakit(konfig, pustaka, a.sfx, data_uri))
+        n = suara_['sfxBerkas']
+        print(f'sfx tertanam: {len(n)}' + (f' (pustaka {pustaka})' if pustaka else '') + f': {", ".join(sorted(n)[:40])}')
     if suara_ is not None:
         blok = json.dumps(suara_, ensure_ascii=False).replace('</', '<\\/')
         html = re.sub(r'<script id="data-suara" type="application/json">.*?</script>',
@@ -616,7 +645,8 @@ def main():
     p = sub.add_parser('kata'); p.add_argument('naskah'); p.add_argument('rekaman'); p.add_argument('keluar'); p.add_argument('--model', default='small'); p.set_defaults(f=kata_dari_rekaman)
     p = sub.add_parser('rakit'); p.add_argument('konfig'); p.add_argument('keluar')
     p.add_argument('--naskah'); p.add_argument('--narasi'); p.add_argument('--kata'); p.add_argument('--baris'); p.add_argument('--mulai', type=float, default=0.05)
-    p.add_argument('--rapatkan', type=float); p.add_argument('--laju-narasi', type=float); p.add_argument('--sfx')
+    p.add_argument('--rapatkan', type=float); p.add_argument('--laju-narasi', type=float); p.add_argument('--sfx', action='append')
+    p.add_argument('--pustaka-sfx'); p.add_argument('--tanpa-pustaka-sfx', action='store_true')
     p.add_argument('--musik'); p.add_argument('--vol-musik', type=float, default=0.3)
     p.add_argument('--gambar'); p.add_argument('--maks', type=int, default=2400); p.add_argument('--klip', action='append'); p.set_defaults(f=rakit)
     p = sub.add_parser('cek'); p.add_argument('html'); p.set_defaults(f=cek)

@@ -48,6 +48,7 @@ Satu kalimat: penjelasan "di balik layar" proses kreatif atau alat digital yang 
 | Penutup | kolom komentar/pesan + benda kunci terkirim (bila produk sendiri) **atau** kembali ke meja awal (loop) | — | `cocok` (benda kunci) | notifikasi |
 
 ## 4. Preset mesin Kolase
+**Sejak 27 Nov 2026 gaya ini tertanam di mesin `skill-edit-rizky`: cukup `tema: 'diorama-kreator'`** (grade, warna aksen, latar bawaan, dan gaya huruf ikut otomatis; musik tetap ditulis sendiri). Blok di bawah = rincian nilainya, dipakai untuk menimpa sebagian atau sebagai contoh lapisan.
 ```js
 const KONFIG = {
   judul: '…', tema: 'modern', rasio: '9:16',            // asal 16:9; di 9:16 benda di tengah, teks di atas, angka di sepertiga atas

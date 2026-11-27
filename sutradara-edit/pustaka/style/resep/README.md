@@ -1,5 +1,7 @@
 # Resep gaya dari reel acuan
 
+**Di `skill-edit-rizky` kedelapan resep sudah menjadi tema bawaan mesin** (sejak 27 Nov 2026): nama tema = nama berkas resep, mis. `tema: 'arsip-pop'`. Resep baru dari bedah acuan berikutnya ikut ditanam dengan cara yang sama (`TEMA` + `GRADE_DASAR` di `skill-edit-rizky/assets/templat.html`, lalu tabel `skill-edit-rizky/references/tema.md`).
+
 Setiap resep = satu gaya utuh (DNA 10 atribut + tata bahasa adegan + preset mesin Kolase + penerapan ke topik lain + yang tidak boleh disalin). Nama selalu orisinal. Dibuat lewat mode D `../../../SKILL.md` §4 (`scripts/ambil_acuan.py` → lihat lembar → `templat/resep-gaya.md`).
 
 ## Daftar

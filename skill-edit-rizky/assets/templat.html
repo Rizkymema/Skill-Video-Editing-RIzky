@@ -134,7 +134,24 @@ const TEMA = {
   // Edit Rizky (20–21 Nov 2026): dua tema dari video yang disukai pengguna; tema boleh membawa latar + gaya huruf bawaan
   editorial: { grade: 'editorial', kuning: '#141414', merah: '#c8202e', stabilo: 'rgba(20,20,20,.16)', musik: 'pad', bpm: 90, latar: { pola: 'editorial' },
                gayaTeks: { judul: { font: '"KR Inter","Inter","Segoe UI",Arial,sans-serif', gaya: '800', warna: '#141414', kapital: false, bayang: false } } },
-  kartu:     { grade: 'kartu', kuning: '#FFD23F', merah: '#E63946', stabilo: 'rgba(255,210,63,.75)', musik: 'ceria', bpm: 104, latar: { pola: 'grid', warna: '#051D40', warnaGaris: 'rgba(170,200,255,.13)', jarak: 72 } }
+  kartu:     { grade: 'kartu', kuning: '#FFD23F', merah: '#E63946', stabilo: 'rgba(255,210,63,.75)', musik: 'ceria', bpm: 104, latar: { pola: 'grid', warna: '#051D40', warnaGaris: 'rgba(170,200,255,.13)', jarak: 72 } },
+  // Resep gaya dari bedah reel acuan (27 Nov 2026; rincian: sutradara-edit/pustaka/style/resep/<nama>.md). Satu kata = grade + aksen + latar + huruf.
+  'sinema-kasus':      { grade: 'sinema-kasus', kuning: '#e0261b', merah: '#e0261b', stabilo: 'rgba(224,38,27,.55)', musik: 'pulsa', bpm: 96, latar: { pola: 'polos', warna: '#111418' },
+                         gayaTeks: { judul: { font: '"KR Inter","Inter","Segoe UI",Arial,sans-serif', gaya: '500', warna: '#f1ece4', kapital: false, bayang: true }, padat: { warna: '#cfcac2' }, label: { kotak: 'rgba(0,0,0,0)', warna: '#f1ece4' } } },
+  'legenda-gelap':     { grade: 'legenda-gelap', kuning: '#f0a23a', merah: '#d11f1f', stabilo: 'rgba(209,31,31,.6)', musik: 'misteri', bpm: 76, latar: { pola: 'kertas', warna: '#26231f', tua: .8 },
+                         gayaTeks: { judul: { warna: '#f3c44a', bayang: true }, elegan: { warna: '#ece4d4' }, tangan: { warna: '#ece4d4' } } },
+  'piksel-kertas':     { grade: 'piksel-kertas', kuning: '#f2c230', merah: '#d62a1e', stabilo: 'rgba(242,194,48,.7)', musik: 'jenaka', bpm: 92, latar: { pola: 'kertas', warna: '#26351a', tua: .7 },
+                         gayaTeks: { judul: { warna: '#efe6cf', kapital: true, bayang: true }, stiker: { kotak: '#d62a1e', tepiKotak: '#d62a1e', warna: '#ffffff' } } },
+  'panggung-emas':     { grade: 'panggung-emas', kuning: '#d9a63a', merah: '#b3122e', stabilo: 'rgba(217,166,58,.6)', musik: 'tegang', bpm: 104, latar: { pola: 'polos', warna: '#0a2019' },
+                         gayaTeks: { elegan: { font: 'Georgia,"Times New Roman","Liberation Serif","DejaVu Serif",serif', gaya: '700', warna: '#ece6cf', kapital: true, bayang: false }, judul: { font: '"KR Inter","Inter","Segoe UI",Arial,sans-serif', gaya: '500', warna: '#ece6cf', kapital: false, bayang: true } } },
+  'arsip-pop':         { grade: 'arsip-pop', kuning: '#f6c12a', merah: '#d4291c', stabilo: 'rgba(42,91,215,.55)', musik: 'ceria', bpm: 124, latar: { pola: 'polos', warna: '#c8231a' },
+                         gayaTeks: { judul: { warna: '#f4f1ea', kapital: false, bayang: true }, label: { kotak: '#2a5bd7', warna: '#ffffff' } } },
+  'kaca-gradien':      { grade: 'kaca-gradien', kuning: '#1f5cff', merah: '#1f5cff', stabilo: 'rgba(31,92,255,.14)', musik: 'pulsa', bpm: 96, latar: { pola: 'grid', warna: '#fbf9fc', warnaGaris: 'rgba(40,40,80,.10)', jarak: 180 },
+                         gayaTeks: { judul: { font: '"KR Inter","Inter","Segoe UI",Arial,sans-serif', gaya: '500', warna: '#221e28', kapital: false, bayang: false }, tebal: { warna: '#111018' }, padat: { warna: '#111018', bayang: false }, elegan: { warna: '#221e28', bayang: false }, tangan: { warna: '#1f5cff', bayang: false }, label: { kotak: 'rgba(255,255,255,.75)', warna: '#221e28' } } },
+  'panggung-korporat': { grade: 'panggung-korporat', kuning: '#f2b632', merah: '#d8261c', stabilo: 'rgba(216,38,28,.45)', musik: 'dokumenter', bpm: 84, latar: { pola: 'polos', warna: '#16181b' },
+                         gayaTeks: { stiker: { font: '"KR Anton","Anton","Impact","Arial Narrow",sans-serif', kotak: '#e8792b', tepiKotak: '#f2b632', warna: '#2a1a0a' }, padat: { warna: '#f2b632', bayang: true }, serif: { font: '"KR Inter","Inter","Segoe UI",Arial,sans-serif', gaya: '300', warna: '#1d1d1f' }, tebal: { warna: '#1d1d1f' } } },
+  'diorama-kreator':   { grade: 'diorama-kreator', kuning: '#e04a3f', merah: '#e04a3f', stabilo: 'rgba(224,74,63,.45)', musik: 'pulsa', bpm: 118, latar: { pola: 'polos', warna: '#160f0e' },
+                         gayaTeks: { judul: { font: '"KR Inter","Inter","Segoe UI",Arial,sans-serif', gaya: '300', warna: '#f4efe8', kapital: false, bayang: true }, tangan: { warna: '#e04a3f', bayang: false }, padat: { warna: '#f4efe8' }, mesin: { warna: '#2a2522' }, stiker: { kotak: '#e04a3f', tepiKotak: '#e04a3f', warna: '#ffffff' } } }
 };
 const TM = TEMA[K.tema] || TEMA.arsip;
 const BENIH = K.benih ?? [...String(K.judul || 'kolase')].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) % 9973, 7); // variasi musik/derau per video
@@ -923,8 +940,8 @@ function keadaan(L, a, t) {
   const t0 = tLapis(a, L.t), t1 = L.akhir !== undefined ? tLapis(a, L.akhir) : Infinity, m = normGerak(L.masuk), k = normGerak(L.keluar);
   // adegan baru sudah tergambar sebelum titik potong (perpindahan berlapis): lapisan yang mulai di detik 0 ikut tampil
   if (t < t0 - 1e-6 && !(t0 <= 1e-6 && t > -(a.lamaMasuk || 0) - .05)) return null;
-  const st = { x: L.x ?? CX, y: L.y ?? CY, skala: 1, putar: L.putar || 0, alfa: L.alfa ?? 1, blur: L.blur || 0, sapu: 1, t: Math.max(0, t - t0) };
-  if (L.gerak) Object.assign(st, kunci(t, L.gerak.map(([tt, v, e]) => [tLapis(a, tt), Object.assign({ x: st.x, y: st.y, skala: st.skala, putar: st.putar, alfa: st.alfa, blur: st.blur }, v), e])));
+  const st = { x: L.x ?? CX, y: L.y ?? CY, skala: 1, putar: L.putar || 0, condong: L.condong || 0, alfa: L.alfa ?? 1, blur: L.blur || 0, sapu: 1, t: Math.max(0, t - t0) };
+  if (L.gerak) Object.assign(st, kunci(t, L.gerak.map(([tt, v, e]) => [tLapis(a, tt), Object.assign({ x: st.x, y: st.y, skala: st.skala, putar: st.putar, condong: st.condong, alfa: st.alfa, blur: st.blur }, v), e])));
   const jauh = d => (d[1] ? H * 1.05 : W * 1.05);
   if (m) {
     const lama = m.lama ?? LAMA_MASUK[m.gaya] ?? .4, p = jepit((t - t0) / lama), d = arahVektor(m.dari || (m.gaya === 'jatuh' ? 'atas' : 'bawah')), sg = m.putar ?? (d[0] || d[1]) * 9;
@@ -957,6 +974,7 @@ function keadaan(L, a, t) {
   } else if (t > t1 && !k) return null;
   if (L.ayun) { const o = L.ayun === true ? {} : L.ayun, ta = tLapis(a, o.t ?? L.t), dt = t - ta; if (dt > 0) st.putar += (o.sudut ?? 14) * Math.exp(-(o.redam ?? 1.4) * dt) * Math.sin(dt * Math.PI * 2 / (o.periode ?? 1.1)); }
   if (L.hidup) { const amp = L.hidup === true ? 6 : L.hidup; st.x += derau(t * .5 + (L._i || 0) * 3.1) * amp; st.y += derau(t * .43 + 7 + (L._i || 0)) * amp; st.putar += derau(t * .3 + 2) * amp * .05; }
+  sekunder(st, L, t, st.t, L._i || 0);
   return st;
 }
 
@@ -1168,6 +1186,7 @@ function lukisIsi2(c, L, a, t, st, s) {
     if (f > .02) { c.save(); c.globalAlpha *= f; c.drawImage(B_.c, -dw / 2 - B_.pad, -dh / 2 - B_.pad, dw + B_.pad * 2, dh + B_.pad * 2); c.restore(); }
   } else if (L.rig && !ee.urutan) gambarRig(c, src, dw, dh, L.rig, a, t); else c.drawImage(src, -dw / 2, -dh / 2, dw, dh);
   if (kh && kh.f > 0) { c.save(); c.globalAlpha *= kh.f; c.filter = filterKlip(); c.drawImage(kh.img, -e.w / 2, -e.h / 2, e.w, e.h); c.restore(); }
+  if (L.elemen && !ee.urutan) gambarElemen(c, L, a, t, ee, s, blurLayar);
   if (L.kilap && !L.rig) kilapLapis(c, L, a, t, src, dw, dh);
 }
 /* kilap: pita cahaya menyapu permukaan lapisan (foto, kartu, benda) sekali, mengikuti bentuk/alfa lapisan.
@@ -1330,8 +1349,79 @@ function gambarSumberLapis(L, t = 0) { // gambar jadi milik lapisan (untuk perpi
   if (L.hitamPutih) ee = hitamPutihGb(ee);
   return sumberGb(ee, t);
 }
+/* ── Elemen hidup + gerak sekunder (Kolase 1.5, 27 Nov 2026; bedah reel @earn.edits Del7Vohuw9D + permintaan pengguna
+   "setiap elemen di dalam gambar hidup lewat rigging berbasis lapisan"). Satu gambar (Flow, foto berlisensi, kiriman pengguna)
+   dipecah jadi ELEMEN tanpa aset baru: lampu jendela berkedip, roda berputar, pintu/daun/bendera bergoyang, awan/asap mengalir,
+   tangan menunjuk. Elemen = anak lapisan gambar: ikut kamera, parallax, masuk/keluar, blur gerak induknya, lalu menambah
+   geraknya sendiri di sekitar porosnya. Wilayah & poros = pecahan 0–1 gambar (baca koordinatnya dengan scripts/elemen.py kisi). */
+function sekunder(st, o, t, tl, benih) { // gerak sekunder bersama lapisan + elemen; semua opsional, osilasi tanpa henti
+  const gel = (g, d) => (g === true ? d : Object.assign({}, d, g));
+  if (o.putaran) st.putar += o.putaran * tl;                                                        // derajat/dtk (roda, kipas, jarum)
+  if (o.goyang) { const g = gel(o.goyang, { sudut: 3, periode: 2.4, fase: 0 }); st.putar += g.sudut * Math.sin((t / g.periode + g.fase) * Math.PI * 2); }
+  if (o.denyut) { const g = gel(o.denyut, { skala: .04, periode: 1.6, fase: 0 }); st.skala *= 1 + g.skala * Math.sin((t / g.periode + g.fase) * Math.PI * 2); }
+  if (o.ombak) { const g = gel(o.ombak, { x: 0, y: 8, periode: 3, fase: 0 }), f = (t / g.periode + g.fase) * Math.PI * 2; st.x += g.x * Math.sin(f); st.y += g.y * Math.sin(f + .6); }
+  if (o.arus) { const g = o.arus; st.x += (g.x || 0) * tl; st.y += (g.y || 0) * tl; if (g.skala) st.skala *= 1 + g.skala * tl; if (g.pudar) st.alfa *= Math.max(0, 1 - g.pudar * tl); }
+  if (o.kedip) { const g = gel(o.kedip, { kuat: .35, laju: 3 }); st.alfa *= 1 - g.kuat * (.5 + .5 * derau(t * g.laju + benih * 3.7)); }
+}
+function bboxElemen(el, w, h) {
+  let x0, y0, x1, y1;
+  if (el.titik) { const xs = el.titik.map(q => q[0] * w), ys = el.titik.map(q => q[1] * h); x0 = Math.min(...xs); x1 = Math.max(...xs); y0 = Math.min(...ys); y1 = Math.max(...ys); }
+  else if (el.bulat) { const [u, v, ru, rv] = el.bulat, rx = ru * w, ry = rv !== undefined ? rv * h : rx; x0 = u * w - rx; x1 = u * w + rx; y0 = v * h - ry; y1 = v * h + ry; }
+  else { const [u0, v0, u1, v1] = el.kotak || [0, 0, 1, 1]; x0 = u0 * w; y0 = v0 * h; x1 = u1 * w; y1 = v1 * h; }
+  return [x0, y0, x1, y1];
+}
+function wilayahElemen(x, el, w, h) { // path wilayah dalam piksel gambar (0,0 = kiri atas)
+  x.beginPath();
+  if (el.titik) { el.titik.forEach(([u, v], i) => (i ? x.lineTo(u * w, v * h) : x.moveTo(u * w, v * h))); x.closePath(); return; }
+  if (el.bulat) { const [u, v, ru, rv] = el.bulat, rx = ru * w; x.ellipse(u * w, v * h, rx, rv !== undefined ? rv * h : rx, 0, 0, Math.PI * 2); return; }
+  const [u0, v0, u1, v1] = el.kotak || [0, 0, 1, 1], r = (el.sudut || 0) * Math.min(w, h);
+  if (r > 0) sudutBulat(x, u0 * w, v0 * h, (u1 - u0) * w, (v1 - v0) * h, r); else x.rect(u0 * w, v0 * h, (u1 - u0) * w, (v1 - v0) * h);
+}
+function cacheElemen(el, ee, src) { // potongan elemen bertepi lembut (+ tambalan kabur) dibuat SEKALI per gambar
+  if (el._cv && el._cv.ee === ee) return el._cv;
+  const w = ee.w, h = ee.h, lb = el.lembut ?? Math.max(2, Math.round(Math.min(w, h) * .006)), pad = lb * 3;
+  let [x0, y0, x1, y1] = bboxElemen(el, w, h); x0 = Math.max(0, Math.floor(x0 - pad)); y0 = Math.max(0, Math.floor(y0 - pad)); x1 = Math.min(w, Math.ceil(x1 + pad)); y1 = Math.min(h, Math.ceil(y1 + pad));
+  const cw = Math.max(2, x1 - x0), ch = Math.max(2, y1 - y0), kanvas = () => Object.assign(document.createElement('canvas'), { width: cw, height: ch });
+  const topeng = (tebal) => { const m = kanvas(), x = m.getContext('2d'); x.translate(-x0, -y0); x.filter = `blur(${lb}px)`; wilayahElemen(x, el, w, h); x.fillStyle = '#fff'; x.fill(); if (tebal) { x.lineWidth = tebal; x.strokeStyle = '#fff'; x.stroke(); } return m; };
+  const cv = kanvas(), x = cv.getContext('2d'); x.drawImage(src, -x0, -y0); x.globalCompositeOperation = 'destination-in'; x.drawImage(topeng(0), 0, 0);
+  let tb = null;
+  if (el.tambal) { // isi lubang di gambar dasar: warna sekitar yang sangat kabur (bukan salinan objek), supaya elemen yang bergeser tak meninggalkan bayangannya
+    tb = kanvas(); const y = tb.getContext('2d'), r = Math.max(12, Math.round(Math.min(cw, ch) * .35));
+    y.filter = `blur(${r}px)`; [[-1, 0], [1, 0], [0, -1], [0, 1]].forEach(([qx, qy], i) => { y.globalAlpha = 1 / (i + 1); y.drawImage(src, -x0 + qx * r * 1.6, -y0 + qy * r * 1.6); }); y.filter = 'none'; y.globalAlpha = 1;
+    y.globalCompositeOperation = 'destination-in'; y.drawImage(topeng(lb * 4), 0, 0);
+  }
+  return (el._cv = { ee, c: cv, tb, x0, y0, w: cw, h: ch });
+}
+function gambarElemen(c, L, a, t, ee, s, blurLayar) {
+  const src = sumberGb(ee, 0), dw = ee.w, dh = ee.h, daftar = L.elemen || [];
+  daftar.forEach(el => { if (!el.tambal) return; const cv = cacheElemen(el, ee, src); if (cv.tb) c.drawImage(cv.tb, cv.x0 - dw / 2, cv.y0 - dh / 2); });
+  daftar.forEach((el, i) => {
+    if (el.t !== undefined && t < tLapis(a, el.t) - 1e-6 && !el.gerak) return;
+    if (el.akhir !== undefined && t > tLapis(a, el.akhir)) return;
+    const cv = cacheElemen(el, ee, src), t0 = tLapis(a, el.t ?? 0), dasar = { x: 0, y: 0, putar: 0, skala: 1, condong: 0, alfa: 1, terang: 0, blur: 0 }, est = Object.assign({}, dasar);
+    if (el.gerak) Object.assign(est, kunci(t, el.gerak.map(([tt, v, e]) => [tLapis(a, tt), Object.assign({}, dasar, v), e])));
+    sekunder(est, Object.assign({}, el, { kedip: undefined }), t, Math.max(0, t - t0), i + 1);
+    if (el.kedip) { // untuk elemen, kedip = terang-gelap (alfa tak terlihat karena di bawahnya ada piksel yang sama)
+      const g = el.kedip === true ? {} : el.kedip, n = .5 + .5 * derau(t * (g.laju ?? 3) + i * 3.7 + 11);
+      if (g.mode === 'alfa') est.alfa *= 1 - (g.kuat ?? .35) * n; else est.terang += (g.dasar ?? 0) - (g.kuat ?? .35) * n;
+    }
+    if (est.alfa <= .003) return;
+    const po = el.poros || [(cv.x0 + cv.w / 2) / dw, (cv.y0 + cv.h / 2) / dh], ax = (po[0] - .5) * dw, ay = (po[1] - .5) * dh, sk = Math.max(.02, s);
+    c.save(); c.globalAlpha *= est.alfa;
+    c.translate(ax + est.x / sk, ay + est.y / sk); c.rotate(est.putar * Math.PI / 180); if (est.condong) c.transform(1, 0, Math.tan(est.condong * Math.PI / 180), 1, 0, 0); c.scale(est.skala, est.skala); c.translate(-ax, -ay);
+    const fl = [], bl = blurLayar + est.blur;
+    if (bl > .5) fl.push(`blur(${(bl * SK).toFixed(1)}px)`);
+    if (Math.abs(est.terang) > .01) fl.push(`brightness(${Math.max(0, 1 + est.terang).toFixed(3)})`);
+    if (fl.length) c.filter = fl.join(' ');
+    const bx = cv.x0 - dw / 2, by = cv.y0 - dh / 2;
+    if (el.rig) { c.translate(bx + cv.w / 2, by + cv.h / 2); gambarRig(c, cv.c, cv.w, cv.h, el.rig, a, t); } else c.drawImage(cv.c, bx, by);
+    c.restore();
+  });
+}
 function gambarLapis(c, a, L, t, kam, kamLalu) {
   const st = keadaan(L, a, t); if (!st || st.alfa <= .003 || st.skala <= .002) return;
+  const ind = L.induk ? a.lapis.find(q => q.id === L.induk) : null, sInd = ind ? keadaan(ind, a, t) : null; // induk-anak: anak ikut gerak induknya
+  if (L.induk && !sInd) return;
   const [w0, h0, e] = ukuranIsi(L), uk = (L.gambar || L.urutan) ? ukuranLapis(L, e) : { s: L.benda && L.lebarTampil ? L.lebarTampil / w0 : L.skala ?? 1 };
   L._blurNow = st.blur; L._masukAktif = st.skala < .85 || st.alfa < .75 || st.blur > 6;
   const z = L.z ?? (L.pola ? 0 : uk.penuh ? .3 : 1);
@@ -1349,9 +1439,12 @@ function gambarLapis(c, a, L, t, kam, kamLalu) {
     c.save();
     if (L.panel) { const [px, py, pw, ph] = L.panel; c.beginPath(); c.rect(px, py, pw, ph); c.clip(); } // layar terbelah: lapisan hanya tampil di kotak layar ini (tidak ikut kamera)
     pasangKamera(c, km, z);
+    if (sInd) { const x0 = ind.x ?? CX, y0 = ind.y ?? CY; c.translate(sInd.x, sInd.y); c.rotate((sInd.putar - (ind.putar || 0)) * Math.PI / 180); c.scale(sInd.skala, sInd.skala); c.translate(-x0, -y0); }
     c.translate(s.x, s.y);
     const porosAtas = (L.poros || (L.ayun ? 'atas' : 'tengah')) === 'atas' && !L.pola, hh = h0 * uk.s * s.skala / 2;
-    if (porosAtas) { c.translate(0, -hh); c.rotate(s.putar * Math.PI / 180); c.translate(0, hh); } else c.rotate(s.putar * Math.PI / 180);
+    const pr = Array.isArray(L.poros) ? L.poros : null, cd = s.condong ? Math.tan(s.condong * Math.PI / 180) : 0;
+    if (pr) { const ox = (pr[0] - .5) * w0 * uk.s * s.skala, oy = (pr[1] - .5) * h0 * uk.s * s.skala; c.translate(ox, oy); c.rotate(s.putar * Math.PI / 180); if (cd) c.transform(1, 0, cd, 1, 0, 0); c.translate(-ox, -oy); }
+    else if (porosAtas) { c.translate(0, -hh); c.rotate(s.putar * Math.PI / 180); if (cd) c.transform(1, 0, cd, 1, 0, 0); c.translate(0, hh); } else { c.rotate(s.putar * Math.PI / 180); if (cd) c.transform(1, 0, cd, 1, 0, 0); }
     if (st.sapu < 1) { const ww = w0 * uk.s * s.skala; c.beginPath(); c.rect(-ww / 2, -h0 * uk.s * s.skala, ww * st.sapu, h0 * uk.s * s.skala * 2); c.clip(); }
     let tutupi = 1; // latar penuh: perbesar seperlunya saat kamera bergeser/berputar jauh supaya tepi gambar tak terlihat
     if (uk.penuh && L.isi !== 'pas') {
@@ -1362,7 +1455,7 @@ function gambarLapis(c, a, L, t, kam, kamLalu) {
     if (jgk) dorongKeTepi(c, w0, h0, jgk, L, i === n - 1);
     if (L.id && i === n - 1) { const m = c.getTransform(); L._quad = [[-w0 / 2, -h0 / 2], [w0 / 2, -h0 / 2], [w0 / 2, h0 / 2], [-w0 / 2, h0 / 2]].map(([px, py]) => [m.a * px + m.c * py + m.e, m.b * px + m.d * py + m.f]); }
     if (L._sembunyi) { c.restore(); continue; }
-    c.globalAlpha = s.alfa * (n === 1 ? 1 : 1 / (i + 1)) ;
+    c.globalAlpha = s.alfa * (sInd ? sInd.alfa : 1) * (n === 1 ? 1 : 1 / (i + 1)) ;
     if (L.campur) c.globalCompositeOperation = L.campur;
     lukisIsi(c, L, a, t, s, uk.s * s.skala * (1 + (kam.zoom - 1) * f));
     c.restore();
@@ -1468,6 +1561,20 @@ function efekAdegan(c, a, e, t) {
     for (let i = 0; i < 9; i++) { const x = ((acak(i * 2.9) * Wd * 1.6 + T_ * (e.laju ?? 18) * SK * (.6 + acak(i) * .8)) % (Wd * 1.6)) - Wd * .3, y = yy + (acak(i * 4.3) - .5) * th, rx = Wd * (.25 + acak(i * 1.7) * .25), ry = th * (.35 + acak(i * 3.3) * .3);
       c.save(); c.translate(x, y); c.scale(1, ry / rx); const g = c.createRadialGradient(0, 0, 0, 0, 0, rx); g.addColorStop(0, alfa(e.warna || '#e9edf2', .32)); g.addColorStop(1, alfa(e.warna || '#e9edf2', 0)); c.globalAlpha = k * (e.kuat ?? .8); c.fillStyle = g; c.fillRect(-rx, -rx, rx * 2, rx * 2); c.restore(); }
     c.restore();
+  } else if (e.jenis === 'kerucut') { // kerucut cahaya lampu dari atas + genangan cahaya di dasar
+    const [ax, ay] = e.titik ? [e.titik[0] * SK, e.titik[1] * SK] : [Wd / 2, -40 * SK], sud = (e.sudut ?? 28) * Math.PI / 180, pj = (e.panjang ?? 1.1) * Hd, kuat = (e.kuat ?? .55) * k, wr = e.warna || '#fff4e0', rr = Math.tan(sud) * pj;
+    c.save(); if (e.gelap) { c.globalAlpha = e.gelap * k; c.fillStyle = '#000'; c.fillRect(0, 0, Wd, Hd); c.globalAlpha = 1; }
+    c.globalCompositeOperation = 'screen'; c.filter = `blur(${(26 * SK).toFixed(1)}px)`;
+    const g = c.createLinearGradient(ax, ay, ax, ay + pj); g.addColorStop(0, alfa(wr, .8 * kuat)); g.addColorStop(1, alfa(wr, .06 * kuat)); c.fillStyle = g;
+    c.beginPath(); c.moveTo(ax - 10 * SK, ay); c.lineTo(ax + 10 * SK, ay); c.lineTo(ax + rr, ay + pj); c.lineTo(ax - rr, ay + pj); c.closePath(); c.fill();
+    c.filter = 'none'; const gy = ay + pj * .92, g2 = c.createRadialGradient(ax, gy, 0, ax, gy, rr); g2.addColorStop(0, alfa(wr, .3 * kuat)); g2.addColorStop(1, alfa(wr, 0)); c.fillStyle = g2; c.beginPath(); c.ellipse(ax, gy, rr, rr * .28, 0, 0, 7); c.fill();
+    c.restore();
+  } else if (e.jenis === 'jendela') { // cahaya jendela jatuh miring di dinding (kusen jadi bayangan), bergeser pelan
+    const [jx, jy] = e.titik ? [e.titik[0] * SK, e.titik[1] * SK] : [Wd * .6, Hd * .42], lw = (e.lebar ?? 620) * SK, lh = (e.tinggi ?? 760) * SK, n = e.panel || [2, 3], ks = (e.kusen ?? 26) * SK;
+    const geser = (e.geser ?? 18) * SK * Math.sin((a.mulai + t) * .25), kuat = (e.kuat ?? .45) * k, cd = Math.tan((e.sudut ?? -22) * Math.PI / 180), cw = (lw - ks * (n[0] - 1)) / n[0], ch = (lh - ks * (n[1] - 1)) / n[1];
+    c.save(); c.globalCompositeOperation = 'screen'; c.filter = `blur(${((e.lembut ?? 14) * SK).toFixed(1)}px)`; c.translate(jx + geser, jy); c.transform(1, 0, cd, 1, 0, 0); c.fillStyle = alfa(e.warna || '#fff1d6', kuat);
+    for (let i = 0; i < n[0]; i++) for (let j = 0; j < n[1]; j++) c.fillRect(-lw / 2 + i * (cw + ks), -lh / 2 + j * (ch + ks), cw, ch);
+    c.restore();
   } else if (e.jenis === 'sorot') { // lampu sorot: di luar lingkaran lembut digelapkan; titik bisa bergerak ke keTitik
     const q = e.keTitik ? E.inOutSine(jepit((t - t0) / Math.max(.1, (e.akhir !== undefined ? t1 : t0 + 2) - t0))) : 0, p0 = e.titik || [W / 2, H * .45], p1 = e.keTitik || p0, px = lerp(p0[0], p1[0], q) * SK, py = lerp(p0[1], p1[1], q) * SK, r = (e.r ?? 330) * SK;
     c.save(); const g = c.createRadialGradient(px, py, r * .55, px, py, r * 1.35); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, `rgba(0,0,0,${(e.kuat ?? .72) * k})`); c.fillStyle = g; c.fillRect(0, 0, Wd, Hd); c.restore();
@@ -1552,6 +1659,37 @@ const TRANSISI = {
   iris: { lama: .6, sfx: 'whoosh', f: (c, A_, B_, p, o) => {
     const Wd = c.canvas.width, Hd = c.canvas.height, [tx, ty] = titikTr(o, c), R = Math.hypot(Wd, Hd) * .62, src = p < .5 ? A_ : B_, k = p < .5 ? 1 - E.inCubic(p / .5) : E.outCubic((p - .5) / .5);
     c.fillStyle = '#000'; c.fillRect(0, 0, Wd, Hd); c.save(); c.beginPath(); c.arc(tx, ty, Math.max(1, R * k), 0, 7); c.clip(); salin(c, src, 1, 0, 0, 1 + .08 * (1 - k)); c.restore(); } },
+  // ── Kolase 1.5 (bedah reel @earn.edits Del7Vohuw9D, 27 Nov 2026): empat sambungan yang lahir dari benda/bentuk di adegan
+  // lubang: lingkaran berisi adegan baru tumbuh dari satu titik di atas adegan lama (cincin cahaya = warnaMasuk, false = tanpa)
+  lubang: { lama: .7, sfx: 'whoosh', f: (c, A_, B_, p, o) => {
+    const Wd = c.canvas.width, Hd = c.canvas.height, [tx, ty] = titikTr(o, c), R = Math.hypot(Wd, Hd) * .62, k = E.inOutCubic(p), m = E.inOutSine(p);
+    const cx = lerp(tx, Wd / 2, m), cy = lerp(ty, Hd / 2, m), r = Math.max(1, R * (.012 + .988 * Math.pow(k, 1.5)));
+    c.save(); if (p > .04) c.filter = `blur(${(9 * SK * p).toFixed(1)}px)`; salin(c, A_, 1, 0, 0, 1 + .14 * k, 0, tx, ty); c.restore();
+    const rim = o.warna === undefined ? '#ffffff' : o.warna;
+    if (rim) { c.save(); c.globalAlpha = 1 - E.inQuad(p); c.shadowColor = rim; c.shadowBlur = 70 * SK; c.fillStyle = rim; c.beginPath(); c.arc(cx, cy, r + 5 * SK, 0, 7); c.fill(); c.restore(); }
+    c.save(); c.beginPath(); c.arc(cx, cy, r, 0, 7); c.clip(); salin(c, B_, 1, 0, 0, 1.2 - .2 * k, ((o.putar || 0) * Math.PI / 180) * (1 - k), cx, cy); c.restore(); } },
+  // portal: kamera masuk lewat jendela/pintu/lensa di adegan lama yang SUDAH memperlihatkan adegan baru (portal: { kotak: [x, y, w, h], bentuk })
+  portal: { lama: .85, sfx: 'whoosh', f: (c, A_, B_, p, o) => {
+    const Wd = c.canvas.width, Hd = c.canvas.height, pt = (o.ke && o.ke.portal) || {}, [x0, y0, w0, h0] = (pt.kotak || [W / 2 - 170, H * .42 - 240, 340, 480]).map(v => v * SK);
+    const fx = x0 + w0 / 2, fy = y0 + h0 / 2, q = Math.max(w0 / Wd, h0 / Hd), Z = 1 / q, k = E.inOutCubic(p), sc = Math.exp(Math.log(Z) * k), sx = lerp(fx, Wd / 2, k), sy = lerp(fy, Hd / 2, k), bl = 10 * SK * Math.sin(Math.PI * p);
+    const pasang = () => { c.translate(sx, sy); c.scale(sc, sc); c.translate(-fx, -fy); };
+    c.save(); pasang(); if (bl > .5) c.filter = `blur(${bl.toFixed(1)}px)`; c.drawImage(A_, 0, 0); c.restore();
+    c.save(); pasang(); c.translate(fx, fy); c.beginPath(); jalurBingkai(c, pt.bentuk || 'kotak', w0, h0); c.clip(); c.drawImage(B_, -Wd * q / 2, -Hd * q / 2, Wd * q, Hd * q); c.restore();
+    const akhir = E.inOutSine(jepit((p - .72) / .28)); if (akhir > 0) { c.save(); c.globalAlpha = akhir; pasang(); c.translate(fx, fy); c.drawImage(B_, -Wd * q / 2, -Hd * q / 2, Wd * q, Hd * q); c.restore(); } } },
+  // sapu: benda gelap lewat dekat lensa (bayangan lensa, tiang, orang lewat) menutup layar; adegan berganti di baliknya (arahMasuk = arah geraknya)
+  sapu: { lama: .6, sfx: 'swish', f: (c, A_, B_, p, o) => {
+    const Wd = c.canvas.width, Hd = c.canvas.height, d = arahVektor(o.arah || 'kiri'), k = E.inOutSine(p), dx = d[0] || 0, dy = d[1] || 0;
+    const off = p < .5 ? -.06 * E.inQuad(p / .5) : .06 * (1 - E.outQuad((p - .5) / .5));
+    salin(c, p < .5 ? A_ : B_, 1, -dx * Wd * off, -dy * Hd * off, 1.04);
+    const bw = Wd * 1.3, bh = Hd * 1.45, px = Wd / 2 - dx * Wd * 1.25 * (1 - 2 * k), py = Hd / 2 - dy * Hd * 1.3 * (1 - 2 * k); // sudut layar tetap mengintip di titik potong (bukan bingkai polos)
+    c.save(); c.filter = `blur(${(36 * SK).toFixed(1)}px)`; c.fillStyle = o.warna || '#0b0a09'; c.beginPath(); c.ellipse(px, py, bw / 2, bh / 2, 0, 0, 7); c.fill(); c.restore(); } },
+  // lepas: adegan lama (kertas, papan klip, foto) terangkat ke arah kamera: membesar, miring, kabur; adegan baru sudah menunggu di bawahnya
+  lepas: { lama: .6, sfx: 'whoosh', f: (c, A_, B_, p, o) => {
+    const Wd = c.canvas.width, Hd = c.canvas.height, d = arahVektor(o.arah || 'bawah'), k = E.inCubic(p), dir = d[0] || d[1] || 1;
+    salin(c, B_, 1, 0, 0, 1.06 - .06 * E.outCubic(p));
+    c.save(); c.globalAlpha = .5 * (1 - E.outQuad(p)); c.fillStyle = '#000'; c.fillRect(0, 0, Wd, Hd); c.restore();
+    const s_ = 1 + 1.1 * k, x = d[0] * Wd * .5 * k, y = d[1] * Hd * .45 * k, r = (o.putar ?? 10) * Math.PI / 180 * k * dir, al = 1 - E.inQuad(jepit((p - .3) / .7));
+    c.save(); if (k > .02) c.filter = `blur(${(24 * SK * k).toFixed(1)}px)`; salin(c, A_, al, x, y, s_, r); c.restore(); } },
   // adegan lama mundur menjadi foto/layar di adegan baru (lab → foto di koran, ruang → layar TV); arah 'masuk' = kebalikannya
   bingkai: { lama: .95, sfx: 'whoosh', f: (c, A_, B_, p, o) => {
     const q = o.quad; if (!q) { TRANSISI.zoom.f(c, A_, B_, p, o); return; }
@@ -1617,7 +1755,7 @@ function seek(T, opsi = {}) {
     if (LA) LA._sembunyi = false; if (LB) LB._sembunyi = false;
     const bk = tr.ke.bingkai, pemegang = bk && (tr.ke.arahMasuk === 'masuk' ? tr.dari : tr.ke), lp = bk && pemegang.lapis.find(L => L.id === (bk.lapis || bk));
     ctx.fillStyle = '#000'; ctx.fillRect(0, 0, KANVAS.width, KANVAS.height); ctx.save();
-    TRANSISI[tr.ke.masuk].f(ctx, cA, cB, p, { titik: tr.ke.titikMasuk, arah: tr.ke.arahMasuk, putar: tr.ke.putarMasuk, warna: tr.ke.warnaMasuk, jumlah: tr.ke.jumlahMasuk, bingkai: typeof bk === 'object' ? bk : {}, quad: lp && lp._quad, lama, qA: LA && LA._quad, qB: LB && LB._quad, gbA: LA && gambarSumberLapis(LA, T - tr.dari.mulai), gbB: LB && gambarSumberLapis(LB, Math.max(0, T - tr.ke.mulai)) });
+    TRANSISI[tr.ke.masuk].f(ctx, cA, cB, p, { ke: tr.ke, titik: tr.ke.titikMasuk, arah: tr.ke.arahMasuk, putar: tr.ke.putarMasuk, warna: tr.ke.warnaMasuk, jumlah: tr.ke.jumlahMasuk, bingkai: typeof bk === 'object' ? bk : {}, quad: lp && lp._quad, lama, qA: LA && LA._quad, qB: LB && LB._quad, gbA: LA && gambarSumberLapis(LA, T - tr.dari.mulai), gbB: LB && gambarSumberLapis(LB, Math.max(0, T - tr.ke.mulai)) });
     ctx.restore(); SEDANG_TRANSISI = false;
   } else gambarAdeganKabur(ctx, a, T - a.mulai);
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.filter = 'none'; ctx.globalCompositeOperation = 'source-over';
@@ -1638,7 +1776,15 @@ const GRADE_DASAR = {
   perang: { tint: '#b9a98a', kuat: .18, saturasi: .45, halftone: .12, grain: .1, vinyet: .52, debu: .7, garis: 0, kontras: .22 },
   alam: { tint: '#f3d9a4', kuat: .1, saturasi: 1.04, halftone: .04, grain: .05, vinyet: .34, debu: .12, garis: 0, kontras: .14 },
   editorial: { tint: '#ffffff', kuat: 0, saturasi: .9, halftone: 0, grain: .06, vinyet: .55, debu: .05, garis: 0, kontras: .08 },
-  kartu: { tint: '#f4e6c8', kuat: .05, saturasi: 1.02, halftone: .05, grain: .07, vinyet: .42, debu: .12, garis: 0, kontras: .1 }
+  kartu: { tint: '#f4e6c8', kuat: .05, saturasi: 1.02, halftone: .05, grain: .07, vinyet: .42, debu: .12, garis: 0, kontras: .1 },
+  'sinema-kasus': { tint: '#9fb3d1', kuat: .12, saturasi: .82, halftone: 0, grain: .07, vinyet: .5, debu: .08, garis: .04, kontras: .2 },
+  'legenda-gelap': { tint: '#e8a46a', kuat: .14, saturasi: .9, halftone: .06, grain: .09, vinyet: .58, debu: .35, garis: 0, kontras: .22 },
+  'piksel-kertas': { tint: '#d9c08a', kuat: .1, saturasi: .92, halftone: .1, grain: .09, vinyet: .6, debu: .2, garis: 0, kontras: .16 },
+  'panggung-emas': { tint: '#ffe6b0', kuat: .06, saturasi: 1.05, halftone: 0, grain: .05, vinyet: .55, debu: 0, garis: 0, kontras: .22 },
+  'arsip-pop': { tint: '#efe2c6', kuat: .06, saturasi: 1, halftone: .05, grain: .1, vinyet: .48, debu: .15, garis: 0, kontras: .2 },
+  'kaca-gradien': { tint: '#ffffff', kuat: 0, saturasi: 1, halftone: 0, grain: .025, vinyet: .12, debu: 0, garis: 0, kontras: .05 },
+  'panggung-korporat': { tint: '#e9ecef', kuat: .05, saturasi: .9, halftone: 0, grain: .06, vinyet: .42, debu: .05, garis: 0, kontras: .2 },
+  'diorama-kreator': { tint: '#f3e2cc', kuat: .05, saturasi: 1.02, halftone: 0, grain: .05, vinyet: .55, debu: .1, garis: 0, kontras: .18 }
 };
 const GRADE = Object.assign({}, GRADE_DASAR[typeof K.grade === 'string' ? K.grade : TM.grade] || GRADE_DASAR.arsip, typeof K.grade === 'object' ? K.grade : {});
 function efekAkhir(c, T) {
@@ -1722,37 +1868,74 @@ function jadwalMusik(ac, out, mus, durasi) {
 
 /* SFX otomatis: transisi + lapisan yang masuk (geser = swish, jatuh = dum saat mendarat, cap = stempel, sorot = spidol) */
 const SFX_MASUK = { geser: ['swish', 0], lempar: ['swish', 0], jatuh: ['dum', .36], pop: ['pop', 0], tumbuh: ['pop', 0], cap: ['stempel', 1], kabur: ['whoosh', 0] };
+function kunciMuncul(L, m, awal) { // kunci pencocok bunyi muncul, paling khusus dulu; null = bukan "muncul" (latar, pola, angka, gambar utama yang datang bersama adegan)
+  const mk = m && m.gaya ? ['masuk.' + m.gaya] : [];
+  if (L.pola || L.angka) return null;
+  if (L.teks !== undefined) return String(L.teks).trim() ? ['teks.anim.' + (L.anim || ''), 'teks.' + (L.gaya || ''), ...mk, 'teks'] : null;
+  if (L.coret) return ['coret.' + L.coret, 'coret'];
+  if (L.benda) { const j = typeof L.benda === 'object' ? L.benda.jenis : L.benda; return ['benda.' + j, ...mk, 'benda']; }
+  if (L.gambar || L.urutan) {
+    let jenis = 'foto';
+    try { const [w0, h0, e] = ukuranIsi(L), uk = ukuranLapis(L, e); jenis = uk.penuh ? 'pelat' : Math.max(w0, h0) * uk.s <= 400 ? 'ikon' : e && e.alfa ? 'potongan' : 'foto'; } catch (_) {}
+    if (awal && jenis !== 'ikon' && !mk.length) return null;
+    return [...mk, 'gambar.' + jenis, 'gambar'];
+  }
+  return null;
+}
 function semuaSfx() {
-  const ev = [], oto = K.sfxOtomatis !== false;
+  // Bunyi muncul (28 Nov 2026, permintaan pengguna: "setiap animasi baik teks atau icon yang muncul harus ada sfx-nya yang cocok"):
+  // bawaan = pencocok pustaka SUARA.bunyiMunculCocok (kunciMuncul). KONFIG.bunyiMuncul objek { teks, gambar, benda, coret, vol } = satu bunyi per jenis (gaya 1.4); false = mati.
+  const ev = [], oto = K.sfxOtomatis !== false, BMK = K.bunyiMuncul;
+  const COCOK = BMK === false || (BMK && typeof BMK === 'object') ? null : (SUARA && SUARA.bunyiMunculCocok && Object.keys(SUARA.bunyiMunculCocok).length ? SUARA.bunyiMunculCocok : null);
+  const BM = BMK && typeof BMK === 'object' ? BMK : (BMK === true && !COCOK ? (SUARA && SUARA.bunyiMunculBawaan) : null);
   A.forEach(a => {
     (a.sfx || []).forEach(e => { const tt = typeof e.t === 'string' ? w(e.t) : a.mulai + (e.t || 0); if (tt !== undefined) ev.push(Object.assign({}, e, { t: tt })); });
-    const tr = TRANSISI[a.masuk]; if (oto && tr && tr.sfx && a.i > 0 && a.sfxMasuk !== false) ev.push({ t: Math.max(0, a.mulai - (tr.sebelum ?? a.lamaMasuk / 2) - .03), jenis: tr.sfx, vol: .75, lama: (tr.sebelum ? tr.sebelum * 2 : a.lamaMasuk) + .15 });
+    const tr = TRANSISI[a.masuk]; if (oto && tr && tr.sfx && a.i > 0 && a.sfxMasuk !== false) ev.push({ t: Math.max(0, a.mulai - (tr.sebelum ?? a.lamaMasuk / 2) - .03), jenis: tr.sfx, vol: .75, lama: (tr.sebelum ? tr.sebelum * 2 : a.lamaMasuk) + .15, peran: 'masuk.' + a.masuk, titik: a.mulai });
     if (!oto) return;
     (a.lapis || []).forEach(L => {
       if (L.sfx === false) return;
       const t0 = a.mulai + tLapis(a, L.t), m = normGerak(L.masuk);
       if (typeof L.sfx === 'string' || (L.sfx && L.sfx.jenis)) { const s = typeof L.sfx === 'string' ? { jenis: L.sfx } : L.sfx; ev.push(Object.assign({ vol: .8 }, s, { t: t0 + (s.geser || 0) })); return; }
-      // Kolase 1.4: bunyi tiap teks/ikon muncul (permintaan pengguna 20 Nov 2026) — L.bunyi per lapisan, KONFIG.bunyiMuncul per jenis lapisan
-      const BM = K.bunyiMuncul, jL = (L.teks !== undefined || L.angka) ? 'teks' : (L.gambar || L.urutan) ? 'gambar' : L.benda ? 'benda' : L.coret ? 'coret' : null;
-      const bunyi = L.bunyi || (BM && jL && !(m && m.gaya === 'cap') ? BM[jL] : null);
-      if (bunyi && t0 > a.mulai + .05) { const s = typeof bunyi === 'string' ? { berkas: bunyi } : bunyi; ev.push(Object.assign({ vol: (BM && BM.vol) ?? .55 }, s, { t: t0 + (s.geser || 0) })); }
-      else if (m && SFX_MASUK[m.gaya] && t0 > a.mulai + .05) { const [j, f] = SFX_MASUK[m.gaya]; ev.push({ t: t0 + (m.lama ?? LAMA_MASUK[m.gaya]) * f, jenis: j, vol: .6 }); }
+      const jL = (L.teks !== undefined || L.angka) ? 'teks' : (L.gambar || L.urutan) ? 'gambar' : L.benda ? 'benda' : L.coret ? 'coret' : null;
+      const awal = t0 <= a.mulai + .05, lamaM = m ? (m.lama ?? LAMA_MASUK[m.gaya] ?? .4) : .3, fM = m && SFX_MASUK[m.gaya] ? SFX_MASUK[m.gaya][1] : .25;
+      const titikM = Math.max(t0 + lamaM * fM, awal && a.i > 0 ? a.mulai + .12 : 0), mulaiM = Math.max(t0, awal && a.i > 0 ? a.mulai + .05 : 0);
+      const lamaAnim = () => L.coret ? (L.lama ?? .5) : L.teks !== undefined ? Math.min(3, Math.max(.4, String(L.teks).replace(/[*^~]/g, '').length * (L.tiap ?? .05))) : .6;
+      const laju = 1 + (acak(t0 * 7.3 + (L._i || 0) * 1.9) - .5) * .08; // beda tipis tiap kemunculan supaya bunyi sama tidak terdengar seperti templat
+      if (L.bunyi) { const s = typeof L.bunyi === 'string' ? { berkas: L.bunyi } : L.bunyi; ev.push(Object.assign({ vol: .55, puncak: true, laju }, s, { t: titikM + (s.geser || 0), muncul: true, pk: titikM })); }
+      else if (BM) {
+        const bunyi = jL && !(m && m.gaya === 'cap') ? BM[jL] : null;
+        if (bunyi && !awal) { const s = typeof bunyi === 'string' ? { berkas: bunyi } : bunyi; ev.push(Object.assign({ vol: BM.vol ?? .55, puncak: true }, s, { t: t0 + (s.geser || 0) })); }
+        else if (m && SFX_MASUK[m.gaya] && !awal) { const [j, f] = SFX_MASUK[m.gaya]; ev.push({ t: t0 + lamaM * f, jenis: j, vol: .6 }); }
+      } else if (COCOK) {
+        const kunci = kunciMuncul(L, m, awal), p = kunci && kunci.map(k => COCOK[k]).find(Boolean);
+        if (p) { const o = typeof p === 'string' ? { berkas: p } : p, dur = !!o.durasi;
+          ev.push({ berkas: o.berkas, vol: (o.vol ?? 1) * (awal ? .78 : .9), t: dur ? mulaiM : titikM, puncak: !dur, lama: dur ? lamaAnim() + .15 : undefined, laju, muncul: true, pk: titikM }); }
+      } else if (m && SFX_MASUK[m.gaya] && !awal) { const [j, f] = SFX_MASUK[m.gaya]; ev.push({ t: t0 + lamaM * f, jenis: j, vol: .6 }); }
       if (L.angka) ev.push({ t: a.mulai + tLapis(a, L.angka.t ?? L.t), jenis: 'gulir', vol: .7, lama: L.angka.lama ?? 1.2 });
       const o = typeof L.benda === 'object' ? L.benda : null;
       if (o && o.sorot) o.sorot.forEach(s => ev.push({ t: a.mulai + tLapis(a, s.t), jenis: 'spidol', vol: .7, lama: s.lama ?? .45 }));
+      if (o && o.notif && COCOK && COCOK['benda.notif'] && L.sfx !== false) { const tn = a.mulai + tLapis(a, o.notif.t ?? .3) + .2, p = COCOK['benda.notif'], q = typeof p === 'string' ? { berkas: p } : p; ev.push({ berkas: q.berkas, vol: (q.vol ?? 1) * .6, t: tn + .1, puncak: true, muncul: true, pk: tn + .1 }); }
       if (o && o.jenis === 'papan' && o.teks) ev.push({ t: a.mulai + tLapis(a, o.t ?? L.t), jenis: 'ketik', vol: .35, lama: o.lama ?? Math.max(.4, o.teks.length * .045) });
     });
     const sfxEfek = { kilat: 'kamera', kilau: 'boom', glitch: 'glitch', bakar: 'whoosh', garis: 'whoosh', cahaya: 'riser' };
-    (a.efek || []).forEach(e => { if (oto && sfxEfek[e.jenis] && e.sfx !== false) ev.push({ t: a.mulai + tLapis(a, e.t), jenis: e.sfx || sfxEfek[e.jenis], vol: e.jenis === 'cahaya' ? .35 : .7, lama: e.jenis === 'cahaya' ? .9 : undefined }); });
+    (a.efek || []).forEach(e => { if (oto && sfxEfek[e.jenis] && e.sfx !== false) { const te = a.mulai + tLapis(a, e.t); ev.push({ t: te, jenis: e.sfx || sfxEfek[e.jenis], vol: e.jenis === 'cahaya' ? .35 : .7, lama: e.jenis === 'cahaya' ? .9 : undefined, peran: 'efek.' + e.jenis, titik: e.jenis === 'cahaya' ? te + .9 : te }); } });
   });
   (K.sfx || []).forEach(e => { const tt = w(e.t); if (tt !== undefined) ev.push(Object.assign({}, e, { t: tt })); });
   // KONFIG.sfxPeta: bunyi sintesis otomatis diganti berkas (mis. Epidemic Sound) bila berkasnya tertanam (rakit --sfx DIR):
   // { whoosh: 'whoosh-sedang', swish: 'swish-cepat', kertas: 'kertas-amplop', stempel: 'stempel', dum: { berkas: 'boom-rendah', vol: .8, lama: 2 } }
-  const peta = K.sfxPeta || {};
+  // Sejak 28 Nov 2026: pustaka sfx/ (rakit otomatis) memberi SUARA.sfxPetaBawaan; KONFIG.sfxPeta menimpa per kunci, false = sintesis lama.
+  // Kunci peran ('masuk.sapu', 'efek.kilau') lebih khusus dari jenis. SUARA.sfxInfo[nama].puncak = detik puncak berkas → puncaknya
+  // diletakkan di titik kejadian (titik potong perpindahan, saat lapisan mendarat), kecuali bunyi berdurasi (gulir, spidol, ketik, loop).
+  const peta = K.sfxPeta === false ? {} : Object.assign({}, SUARA && SUARA.sfxPetaBawaan, K.sfxPeta || {}), INFO = (SUARA && SUARA.sfxInfo) || {}, BERDURASI = { gulir: 1, spidol: 1, ketik: 1, proyektor: 1 };
+  // bunyi muncul di puncak perpindahan sedikit dilunakkan; yang bertumpuk (< 0,06 dtk) digeser 0,07 dtk + dilunakkan, tidak dibuang
+  const puncakTr = ev.filter(e => e.peran && e.peran.startsWith('masuk.')).map(e => e.titik), mun = ev.filter(e => e.muncul).sort((x, y) => x.pk - y.pk);
+  mun.forEach((e, i) => { if (puncakTr.some(t => Math.abs(t - e.pk) < .15)) e.vol *= .85; if (i && e.pk - mun[i - 1].pk < .06) { e.t += .07; e.pk = mun[i - 1].pk + .07; e.vol *= .75; } });
   return ev.map(e => {
-    const p = !e.berkas && peta[e.jenis]; if (!p) return e;
+    if (e.berkas) { const inf = INFO[e.berkas]; return e.puncak === true && inf ? Object.assign({}, e, { t: Math.max(0, e.t - inf.puncak) }) : e; }
+    const p = (e.peran && peta[e.peran]) || peta[e.jenis]; if (!p) return e;
     const o = typeof p === 'string' ? { berkas: p } : p; if (!BUFFER_SFX[o.berkas]) return e;
-    return Object.assign({}, e, { berkas: o.berkas, jenis: undefined, vol: (e.vol ?? 1) * (o.vol ?? 1), lama: o.lama, dari: o.dari });
+    const inf = INFO[o.berkas], dur = BERDURASI[e.jenis] || o.ulang, t = !dur && inf ? Math.max(0, (e.titik ?? e.t) - inf.puncak) : e.t;
+    return Object.assign({}, e, { t, berkas: o.berkas, jenis: undefined, vol: (e.vol ?? 1) * (o.vol ?? 1), lama: dur ? (e.lama ?? o.lama) : o.lama, dari: o.dari, ulang: o.ulang ?? e.ulang });
   }).filter(e => SFX[e.jenis] || (e.berkas && BUFFER_SFX[e.berkas]));
 }
 
@@ -1782,7 +1965,7 @@ async function hasilCek(langkah = 0.1) {
     kx.drawImage(KANVAS, 0, 0, kecil.width, kecil.height); const d = kx.getImageData(0, 0, kecil.width, kecil.height).data; const lum = [];
     for (let i = 0; i < d.length; i += 4) lum.push(d[i] * .3 + d[i + 1] * .59 + d[i + 2] * .11);
     const rata = lum.reduce((a, b) => a + b, 0) / lum.length, varian = lum.reduce((a, b) => a + (b - rata) ** 2, 0) / lum.length;
-    if (varian < 6 && t > .1 && t < DURASI - .1) catatW(salah, t, 'bingkai kosong/polos');
+    if (varian < 6 && t > .1 && t < DURASI - .1 && !A.some(a => a.masuk === 'sapu' && Math.abs(t - a.mulai) < .1)) catatW(salah, t, 'bingkai kosong/polos'); // sapu: gelap 1–2 bingkai di titik potong memang disengaja
     if (prev) ubah.push([t, lum.reduce((a, b, i) => a + Math.abs(b - prev[i]), 0) / lum.length]); prev = lum;
   }
   jejak_.forEach(({ arr, pesan, t: ts }) => {
@@ -1791,6 +1974,11 @@ async function hasilCek(langkah = 0.1) {
   });
   Object.entries(lamaTeks).forEach(([s, d]) => { if (d < .7 && s.length > 3 && !/\d/.test(s)) catat(saran, `teks tampil < 0,7 dtk, sulit terbaca: "${s.slice(0, 40)}"`); });
   const rumus = cekKolase(salah, saran, ubah, teksTerlihat, catat);
+  try { // aturan pengguna 28 Nov 2026: setiap teks/ikon yang muncul berbunyi cocok
+    const bisu = []; A.forEach(a => (a.lapis || []).forEach(L => { if (L.sfx === false && kunciMuncul(L, normGerak(L.masuk), tLapis(a, L.t) <= .05)) bisu.push(L.teks !== undefined ? String(L.teks).slice(0, 24) : (L.gambar || (L.benda && (L.benda.jenis || L.benda)) || L.coret)); }));
+    if (bisu.length) catat(saran, bisu.length + ' teks/ikon muncul tanpa bunyi (sfx: false): ' + bisu.slice(0, 5).join(' · ') + (bisu.length > 5 ? ' …' : ''));
+    if (K.bunyiMuncul !== false && !(K.bunyiMuncul && typeof K.bunyiMuncul === 'object') && !(SUARA && SUARA.bunyiMunculCocok && Object.keys(SUARA.bunyiMunculCocok).length)) catat(saran, 'pustaka SFX tidak tertanam: teks/ikon muncul tanpa bunyi cocok (rakit tanpa --tanpa-pustaka-sfx)');
+  } catch (_) {}
   catatan.forEach(cn => catat(salah, cn));
   aturSkala(skalaLama); seek(WAKTU);
   return { beres: !salah.length, salah, saran, durasi: DURASI, rumus, audio: CEK_AUDIO, adegan: A.map(a => [a.id, +a.mulai.toFixed(2), +a.akhir.toFixed(2), a.masuk || 'potong']) };
@@ -1811,7 +1999,8 @@ function cekKolase(salah, saran, ubah, teksTerlihat, catat) {
     const mm = K.narasiMulaiMaks ?? .15; // hook tanpa suara (mis. skit POV 7 dtk): KONFIG.narasiMulaiMaks = 7.3
     if (mulai > mm + 1e-3) catat(salah, `narasi baru mulai di ${f2(mulai)} dtk (maks ${String(mm).replace('.', ',')})`);
     if (jeda > .6 + 1e-3) catat(salah, `jeda narasi ${f2(jeda)} dtk di ${f2(jedaT)} dtk (maks 0,6)`);
-    if (ekor > .9) catat(salah, `kata terakhir selesai ${f2(ekor)} dtk sebelum video habis (maks 0,9)`);
+    const em = K.ekorMaks ?? .9; // penutup visual tanpa narasi (bingkai akhir/loop, 28 Nov 2026): KONFIG.ekorMaks = 2.6
+    if (ekor > em + 1e-3) catat(salah, `kata terakhir selesai ${f2(ekor)} dtk sebelum video habis (maks ${String(em).replace('.', ',')})`);
   } else catat(saran, 'belum ada narasi');
   // perpindahan: potong keras maks 3, ragam minimal 4 jenis
   const keras = A.slice(1).filter(a => !a.masuk || a.masuk === 'potong'); r.potongKeras = keras.length;
@@ -1859,7 +2048,7 @@ function mainkanBerkas(ac, out, e) {
   const buf = BUFFER_SFX[e.berkas]; if (!buf) return;
   const t = Math.max(0, e.t), lama = typeof e.lama === 'string' ? Math.max(.1, (w(e.lama) ?? t + 4) - t) : (e.lama ?? (e.ulang ? 4 : buf.duration)), v = e.vol ?? 1;
   const s = ac.createBufferSource(), g = ac.createGain();
-  s.buffer = buf; s.loop = !!e.ulang; g.gain.setValueAtTime(.0001, t); g.gain.linearRampToValueAtTime(v, t + Math.min(.3, (e.masuk ?? .02)));
+  s.buffer = buf; s.loop = !!e.ulang; if (e.laju) s.playbackRate.value = e.laju; g.gain.setValueAtTime(.0001, t); g.gain.linearRampToValueAtTime(v, t + Math.min(.3, (e.masuk ?? .02)));
   g.gain.setValueAtTime(v, Math.max(t + .02, t + lama - .3)); g.gain.linearRampToValueAtTime(.0001, t + lama);
   s.connect(g); g.connect(out); s.start(t, e.dari || 0); s.stop(t + lama + .05);
 }

@@ -16,7 +16,7 @@ Lihat docstring `scripts/flow_kolase.py`. Tips isi (`isi`, bahasa Inggris):
 - Benda khas cerita digambarkan lengkap di setiap aset (warna, garis, bentuk), karena Flow tidak ingat antar-gambar. Untuk benda yang harus identik, beri `acuan` gambar (references).
 - Potongan: subjek tunggal, tidak menyentuh tepi kecuali memang dipotong (tangan dari tepi, badan setengah). **Pilih salah satu dengan sengaja** (Kolase 1.2, keluhan pengguna: tangan berlengan terlihat terpotong di tengah layar): (a) **utuh**: "entire object fully visible, generous green margin on all sides" untuk benda yang melayang/dipindah (`cocok`, `terbang`); (b) **masuk dari tepi**: "arm entering from the bottom edge of the frame" untuk tangan, lengan, badan setengah, kerumunan; sisi itu otomatis ditempel ke tepi layar (`jangkar`), jadi letakkan lapisannya memang dekat tepi tersebut (`y` besar untuk tangan dari bawah).
 - Potongan yang akan diberi `rig` (tokoh, tangan, bendera, tanaman): pose netral, sendi terlihat jelas (pergelangan, leher), tidak ada benda lain yang menempel di bagian yang bergerak.
-- Gaya per aset boleh beda: `arsip` (bawaan), `modern` (masa kini), `gelap` (malam, dramatis). Grade mesin menyatukan warnanya.
+- Gaya per aset boleh beda: `arsip` (bawaan), `modern` (masa kini), `gelap` (malam, dramatis), `studio3d` (render 3D krom/pelangi di latar hijau, untuk tema `kaca-gradien` dan benda 3D). Grade mesin menyatukan warnanya.
 
 ## 3. Generate (0 kredit, tanpa izin terpisah)
 ```

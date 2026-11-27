@@ -39,6 +39,7 @@ Satu kalimat: kisah bangkit dan jatuhnya perusahaan/negara/tokoh yang diceritaka
 | Penutup | produk/gedung di sorot sunyi | 1 kalimat vonis | `lebur` lambat | hening + satu nada |
 
 ## 4. Preset mesin Kolase
+**Sejak 27 Nov 2026 gaya ini tertanam di mesin `skill-edit-rizky`: cukup `tema: 'panggung-korporat'`** (grade, warna aksen, latar bawaan, dan gaya huruf ikut otomatis; musik tetap ditulis sendiri). Blok di bawah = rincian nilainya, dipakai untuk menimpa sebagian atau sebagai contoh lapisan.
 ```js
 const KONFIG = {
   judul: '…', tema: 'modern',

@@ -1,4 +1,4 @@
-# Katalog tema — pilih tampilan untuk topik apa pun
+# Katalog tema — pilih tampilan untuk topik apa pun (10 tema dasar + 8 tema gaya dari reel acuan)
 
 Satu video = satu tema (`KONFIG.tema`). Tema mengatur **grade warna, 2 warna aksen, warna stabilo, musik sintesis**, dan (tema baru) **latar + gaya huruf bawaan**. Semua bisa ditimpa per video (`grade`, `palet`, `gayaTeks`, `latar` per adegan). Ditanya di dialog setup (pertanyaan **Tema**); bawaan "Otomatis dari topik".
 
@@ -16,19 +16,21 @@ Satu video = satu tema (`KONFIG.tema`). Tema mengatur **grade warna, 2 warna aks
 | **`kartu`** | navy #051D40 bergrid + kartu kertas retro | tips, tutorial, produktivitas, seri edukasi bertokoh | latar navy grid otomatis, kartu kertas berselotip, mockup chat/UI, tokoh 3D (`aset/raka-3d/`) | `pop`, `kartu`, `sentak` | ceria | `judul`, `stiker` merah, `label`, `tangan` | `contoh/prompt-ai` (seri prompt AI, tokoh Raka 3D) |
 | **ikut acuan** | sesuai video/gambar yang pengguna kirim | apa saja | dibedah `scripts/bedah_acuan.py` → `acuan.md` | sesuai acuan | sesuai acuan | sesuai acuan | — |
 
-## Resep gaya dan 20 gaya → tema dasar
-Resep (`sutradara-edit/pustaka/style/resep/`) memakai tema di atas sebagai dasar lalu menimpa `grade`, `palet`, `gayaTeks`, `latar`, dan `musik`:
-| Resep | Tema dasar | Inti tampilan |
-|---|---|---|
-| Sinema Kasus | `modern` | malam biru dingin + satu merah, layar di dalam adegan, kartu tersangka |
-| Legenda Gelap | `dosir` | api jingga vs bulan biru, papan kapur, polaroid bertali merah |
-| Piksel Kertas | `kartu` | kertas zaitun, potongan kertas, huruf 8-bit, pita merah |
-| Panggung Emas | `modern` | hijau botol + emas, serif raksasa di belakang subjek, konfeti |
-| Arsip Pop | `tv` | warna selektif, label sobek, halaman warna datar, koran fiktif |
-| Kaca Gradien | `editorial` | kisi putih, benda krom, tombol kaca, biru listrik |
-| Panggung Korporat | `modern` | dunia abu + warna kuasa, grafik batang di kertas grafik, dokumen dicoret |
-| Diorama Kreator | `modern` | dunia mainan voxel, benda di bawah sorot, layar chat biru, kartu krem berangka, satu benda kunci berpindah adegan |
-20 gaya visual lain beserta tema dasarnya: `sutradara-edit/pustaka/style/gaya-visual.md`.
+## 8 tema gaya dari reel acuan (sejak 27 Nov 2026, tertanam di mesin)
+Hasil bedah reel @earn.edits dan @t1mline (permintaan pengguna: "skill saya diupdate agar ada beberapa style"). **Satu kata** di konfig, mis. `tema: 'panggung-korporat'`, langsung memasang grade, warna aksen kata (`*…*`), warna stiker/cap, latar bawaan (adegan tanpa `latar`), dan gaya huruf. Musik tidak otomatis: tulis `musik: { sintesis: '<musik bawaan>' }` atau pakai berkas Epidemic. Semua tetap bisa ditimpa (`grade`, `palet`, `gayaTeks`, `latar` per adegan).
+
+| Tema | Tampilan | Cocok untuk | Latar bawaan | Huruf | Transisi tanda tangan | Musik bawaan | Rincian resep |
+|---|---|---|---|---|---|---|---|
+| `sinema-kasus` | malam biru dingin, satu aksen merah, layar di dalam adegan | kriminal siber, skandal, penipuan, kasus viral | polos biru-hitam | judul Inter tipis putih, angka abu, label tanpa kotak | `dorong` ke layar, bentuk/`iris`, adegan masuk ke TV (`bingkai`) | pulsa 96 | `sinema-kasus.md` |
+| `legenda-gelap` | api jingga vs bulan biru, papan kapur, polaroid bertali merah | mitos, legenda Nusantara, asal-usul tradisi, sejarah kelam | kertas arang | judul kuning api, serif krem, tulisan tangan krem | lensa `bingkai` bulat, lingkungan sama musim berganti (`fokus`), `tutup` | misteri 76 | `legenda-gelap.md` |
+| `piksel-kertas` | kertas zaitun, potongan kertas, pita merah, metafora benda | produktivitas, karier, kesehatan mental kerja, tips, gaming | kertas zaitun | judul krem kapital, pita merah | `strip`/`glitch` pendek, benda turun berayun, `cocok` layar | jenaka 92 | `piksel-kertas.md` |
+| `panggung-emas` | hijau botol + emas, serif raksasa di belakang subjek | pengumuman, peringkat, giveaway, prestasi, peluncuran | polos hijau botol | serif kapital (elegan), Inter tipis (judul) | `sentak`, `terbang`, `kilau` di payoff | tegang 104 | `panggung-emas.md` |
+| `arsip-pop` | iklan majalah lama: warna selektif, label sobek, halaman warna datar | penemuan aneh, rekor, sejarah produk, kuliner, sains populer | polos merah | judul putih tidak kapital, label biru | `cocok` benda tetap zaman berganti, `iris` ke tekstur bahan | ceria 124 | `arsip-pop.md` |
+| `kaca-gradien` | kisi putih, benda krom, tombol kaca, biru listrik | aplikasi, AI, fitur produk, fintech, tutorial alat | kisi putih | Inter sedang gelap, label kaca | `cocok`/`kartu` tukar, `iris` dari tombol | pulsa 96 | `kaca-gradien.md` |
+| `panggung-korporat` | dunia abu + warna kuasa, grafik di kertas grafik, panggung pesaing | naik-turun perusahaan, persaingan, ekonomi, karier tokoh | polos panggung gelap (adegan data: `latar: { pola: 'grid', warna: '#ece6d6', warnaGaris: 'rgba(40,60,90,.10)', jarak: 44 }` + teks `gaya: 'serif'`/`'tebal'` gelap) | pita jingga Anton, angka kuning, kesimpulan Inter tipis | `cocok` benda kuasa, `tarik`, warna hilang (`hitamPutih`) | dokumenter 84 | `panggung-korporat.md` |
+| `diorama-kreator` | dunia mainan voxel, benda di bawah sorot, layar chat biru, kartu krem berangka | alat AI, proses kreatif, mitos "tombol ajaib", produk digital sendiri | polos panggung gelap | Inter tipis putih, kata tulisan tangan merah | `dorong` menembus lensa, `cocok` benda kunci, `bingkai` masuk ke layar | pulsa 118 | `diorama-kreator.md` |
+
+Rincian resep (urutan adegan khas, contoh lapisan konfig, penerapan untuk topik lain, yang tidak boleh disalin) ada di `sutradara-edit/pustaka/style/resep/<nama>.md`; contoh video jadi: Kodak (27 Nov 2026, Panggung Korporat). 20 gaya visual umum lain beserta tema dasarnya: `sutradara-edit/pustaka/style/gaya-visual.md`.
 
 ## Aturan pakai
 - **Otomatis**: pilih dari kolom "Cocok untuk", lalu cek `riwayat.py lihat` supaya tidak sama dengan video terakhir (kecuali pengguna memilih tema sendiri atau sedang membuat seri).

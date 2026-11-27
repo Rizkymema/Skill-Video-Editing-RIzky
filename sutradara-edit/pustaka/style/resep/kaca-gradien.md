@@ -39,6 +39,7 @@ Satu kalimat: penjelasan produk/teknologi yang terasa seperti situs startup prem
 | Ajakan | tombol kaca ditekan → layar biru penuh | nama + pil alamat | `iris` dari tombol | klik + nada naik |
 
 ## 4. Preset mesin Kolase
+**Sejak 27 Nov 2026 gaya ini tertanam di mesin `skill-edit-rizky`: cukup `tema: 'kaca-gradien'`** (grade, warna aksen, latar bawaan, dan gaya huruf ikut otomatis; musik tetap ditulis sendiri). Blok di bawah = rincian nilainya, dipakai untuk menimpa sebagian atau sebagai contoh lapisan.
 ```js
 const KONFIG = {
   judul: '…', tema: 'editorial', rasio: '16:9',            // 9:16 juga bisa: teks tetap kecil, benda di tengah

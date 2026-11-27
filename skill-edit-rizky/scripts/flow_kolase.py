@@ -32,7 +32,7 @@ aset.json:
   "proyek": "kolase-n250",              # nama folder hasil Flow (flow-mcp-out/<proyek>); unik per video
   "rasio": "9:16",
   "era": "1990s Indonesia",             # zaman + tempat cerita: masuk ke setiap prompt
-  "gaya": "arsip",                      # arsip (foto film 35 mm pudar) | modern (foto dokumenter kini) | gelap (malam, dramatis)
+  "gaya": "arsip",                      # arsip (foto film 35 mm pudar) | modern (foto dokumenter kini) | gelap (malam, dramatis) | studio3d (render 3D krom, kaca-gradien)
   "acuan": {"pesawat": "C:/.../n250.png"},   # opsional: gambar acuan (tokoh/benda yang harus sama di beberapa aset)
   "aset": [
     {"kode": "hangar", "jenis": "pelat", "isi": "inside a bright aircraft assembly hangar, a white turboprop airliner ..."},
@@ -52,6 +52,7 @@ GAYA = {
     'arsip': 'Authentic {era} documentary photograph shot on 35mm film, warm faded colors, soft film grain, natural light, realistic',
     'modern': 'Contemporary documentary photograph, natural colors, realistic, sharp',
     'gelap': 'Dramatic {era} documentary photograph at night, low-key lighting, deep shadows, film grain, realistic',
+    'studio3d': 'Premium 3D product render, soft diffused studio lighting, glossy and chrome materials with subtle iridescent highlights, clean, high detail',  # gaya kaca-gradien / benda 3D (28 Nov 2026)
 }
 LARANG = 'no text, no letters, no numbers, no logos, no signage, no watermark'
 PELAT = 'Vertical {rasio} photo: {isi}. {gaya}, generous empty space in the upper third of the frame, {larang}.'
