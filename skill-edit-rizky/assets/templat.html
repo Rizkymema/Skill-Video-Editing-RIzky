@@ -1808,7 +1808,8 @@ function cekKolase(salah, saran, ubah, teksTerlihat, catat) {
     const mulai = akt[0][0], akhir = akt[akt.length - 1][1]; let jeda = 0, jedaT = 0;
     for (let i = 1; i < akt.length; i++) { const g = akt[i][0] - akt[i - 1][1]; if (g > jeda) { jeda = g; jedaT = akt[i - 1][1]; } }
     const ekor = DURASI - akhir; Object.assign(r, { narasiMulai: +f2(mulai), jedaMaks: +f2(jeda), jedaDi: +f2(jedaT), ekor: +f2(ekor), kata: KATA.length, kataPerMenit: Math.round(KATA.length / Math.max(.1, (akhir - mulai) / 60)) });
-    if (mulai > .15 + 1e-3) catat(salah, `narasi baru mulai di ${f2(mulai)} dtk (maks 0,15)`);
+    const mm = K.narasiMulaiMaks ?? .15; // hook tanpa suara (mis. skit POV 7 dtk): KONFIG.narasiMulaiMaks = 7.3
+    if (mulai > mm + 1e-3) catat(salah, `narasi baru mulai di ${f2(mulai)} dtk (maks ${String(mm).replace('.', ',')})`);
     if (jeda > .6 + 1e-3) catat(salah, `jeda narasi ${f2(jeda)} dtk di ${f2(jedaT)} dtk (maks 0,6)`);
     if (ekor > .9) catat(salah, `kata terakhir selesai ${f2(ekor)} dtk sebelum video habis (maks 0,9)`);
   } else catat(saran, 'belum ada narasi');

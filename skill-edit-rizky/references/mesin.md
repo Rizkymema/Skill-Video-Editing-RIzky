@@ -8,6 +8,7 @@ File: `assets/templat.html`. Per video hanya blok `<script id="konfig">` (KONFIG
 | `judul` | — | judul (jadi `<title>` dan nama file ekspor) |
 | `rasio`, `fps` | `'9:16'`, 30 | |
 | `durasiTarget` | `[30, 70]` | rentang durasi yang lolos cek |
+| `narasiMulaiMaks` | `.15` | batas detik narasi mulai (cek). Naikkan untuk **hook tanpa suara** (skit POV, kartu judul): mis. `7.3` bersama `rakit --mulai 7` (narasi baru terdengar di detik 7) |
 | `tema` | `'arsip'` | paket tampilan per jenis topik: `arsip` · `dosir` · `pasar` · `teknologi` · `tv` · `modern` · `perang` · `alam` (grade + 2 warna aksen + warna stabilo + musik; tabel kapan dipakai di `gaya.md` §0). `grade`/`palet`/`musik` yang ditulis sendiri tetap menang |
 | `benih` | dari `judul` | angka variasi (progresi akord, nada dasar, pola petikan musik sintesis); otomatis beda tiap judul |
 | `grade` | dari `tema` | `'arsip'` · `'hangat'` · `'dingin'` · `'tv'` (garis layar) · `'dosir'` (teal gelap kontras) · `'modern'` (pekat, tanpa halftone) · `'perang'` (pudar berdebu) · `'alam'` · `'polos'`, atau objek `{ tint, kuat, saturasi, halftone, grain, vinyet, debu, garis, kontras }` (menimpa `arsip`). Per adegan: `grade: {...}` |

@@ -16,6 +16,10 @@ Raka: pria muda Indonesia gaya animasi 3D (Pixar-like), rambut hitam pendek rapi
 | `tokoh-pusing.png` | pusing di balik laptop, gulungan kertas panjang |
 | `tokoh-gunting.png` | menggunting pita kertas panjang |
 | `tokoh-kopi.png` | santai pegang kopi + jempol |
+| `tokoh-baca.png` | memegang tumpukan kertas (jurnal), menunduk membaca |
+| `tokoh-hp.png` | tersenyum santai, mengetik balasan di HP |
+| `tokoh-canggung.png` | senyum canggung, keringat dingin, garuk tengkuk |
+| `tokoh-tutupmuka.png` | putus asa, kedua tangan menutup muka, satu mata mengintip di sela jari, keringat dingin |
 
 **Pose baru** (pakai `_acuan-raka.jpeg` sebagai referensi):
 ```
